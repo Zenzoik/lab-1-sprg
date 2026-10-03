@@ -1,0 +1,11 @@
+build/
+*.o
+*.d
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+.DS_Store
+.vscode/
+wokwi.vcd
