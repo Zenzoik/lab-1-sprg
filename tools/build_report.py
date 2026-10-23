@@ -169,7 +169,11 @@ def figure(alt, path):
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p.paragraph_format.keep_with_next = True
     p.paragraph_format.space_before = Pt(6)
-    p.add_run().add_picture(full, width=Cm(16.0))
+    from PIL import Image
+    with Image.open(full) as im_:
+        w_px, h_px = im_.size
+    width_cm = min(16.0, 21.0 * w_px / h_px)  # keep tall screenshots on one page with caption
+    p.add_run().add_picture(full, width=Cm(width_cm))
     c = doc.add_paragraph()
     c.alignment = WD_ALIGN_PARAGRAPH.CENTER
     c.paragraph_format.space_after = Pt(10)

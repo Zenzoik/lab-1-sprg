@@ -246,25 +246,29 @@ sigrok (spiflash): `Read identification (RDID): Manufacturer 0xef, Memory type 0
 
 ## Додаток. Скриншоти виконання
 
-Усі скриншоти зроблено на робочому ПК під час виконання роботи (Windows, WSL2, Docker-образ `stm32-build-lr2`, VS Code з розширенням Wokwi).
+Усі скриншоти зроблено на робочому ПК під час виконання роботи (Windows, WSL2, Docker-образ stm32-build-lr2, VS Code з розширенням Wokwi, STM32CubeMX).
 
 ![Рис. А.1 – Схема підключення у Wokwi: NUCLEO-C031C6, MPU-6050 (I2C), W25Q64 (SPI), два сервоприводи, потенціометр, кнопка і логічний аналізатор Wokwi Logic](wokwi_diagram.png)
 
-![Рис. А.2 – STM32CubeMX, Pinout view: I2C1 (PA9/PA10), SPI1 (PB3/PB4/PB5), USART2 (PA2/PA3), TIM3 CH1/CH2 (PA6/PA7), ADC1_IN0 (PA0), FLASH_CS (PB0), MARKER (PB1), LED (PA5), BUTTON (PC13)](cubemx_pinout.png)
+![Рис. А.2 – Послідовний термінал Wokwi після запуску: SELFTEST RESULT pass=8 fail=0, результати перевірок MPU-6050, W25Q64, ADC, кнопки і PWM, аномалії i2c_probe 0x69 NACK та spi_mode=3 jedec=FFFFFF](wokwi_selftest.png)
 
-![Рис. А.3 – STM32CubeMX, Clock Configuration: HSI48 → SYSCLK = HCLK = 48 МГц, APB = 48 МГц](cubemx_clock.png)
+![Рис. А.3 – STM32CubeMX, Pinout view: I2C1 (PA9/PA10), SPI1 (PB3/PB4/PB5), USART2 (PA2/PA3), TIM3 CH1/CH2 (PA6/PA7), ADC1_IN0 (PA0), FLASH_CS (PB0), MARKER (PB1), LED (PA5), BUTTON (PC13)](cubemx_pinout.png)
 
-![Рис. А.4 – Самоперевірка в Wokwi: послідовний термінал, SELFTEST RESULT pass=8 fail=0, результати DEV-перевірок MPU-6050, W25Q64, ADC, кнопки і PWM, аномалії i2c_probe 0x69 NACK та spi_mode=3 jedec=FFFFFF](wokwi_selftest.png)
+![Рис. А.4 – STM32CubeMX, Clock Configuration: HSI48 → SYSCLK = HCLK = 48 МГц, APB = 48 МГц, джерело тактування I2C1 – PCLK](cubemx_clock.png)
 
-![Рис. А.5 – make build: збірка з прапорами -Wextra -Wshadow -Wpedantic -Werror, розмір прошивки text = 26568 байт](term_build.png)
+![Рис. А.5 – STM32CubeMX, параметри I2C1: Standard Mode 100 кГц, Timing 0x10805D88, 7-бітна адресація](cubemx_i2c1.png)
 
-![Рис. А.6 – make test: усі 69 перевірок пройдено, PASSED: 0 test(s) failed](term_test.png)
+![Рис. А.6 – STM32CubeMX, параметри SPI1: Full-Duplex Master, 8 біт, MSB first, CPOL Low, CPHA 1 Edge (режим 0), 3.0 Мбіт/с, програмний NSS](cubemx_spi1.png)
 
-![Рис. А.7 – make coverage: покриття 95.4 % рядків і 77.9 % гілок, пороги 90 % / 70 % виконано](term_cov.png)
+![Рис. А.7 – make build: збірка шарів Platform/Devices/App з прапорами -Wextra -Wshadow -Wpedantic -Werror, компонування і розмір прошивки (text = 26568 байт)](term_build.png)
 
-![Рис. А.8 – make check: правила залежностей шарів, самоперевірка перевірки (2 навмисні порушення виявлено), check-pinout: 14 rows, 0 errors; історія комітів гілки lab2](term_check.png)
+![Рис. А.8 – make test: усі 69 перевірок чотирьох наборів пройдено, PASSED: 0 test(s) failed](term_test.png)
 
-![Рис. А.9 – Декодування записів логічного аналізатора через sigrok-cli: I2C (WHO_AM_I, адреса 0x68) і SPI (JEDEC ID: 0xEF, 0x40, 0x17)](term_decode.png)
+![Рис. А.9 – make coverage: покриття 95.4 % рядків і 77.9 % гілок, пороги 90 % і 70 % виконано; таблиця покриття по файлах (рядки з результатами тестів у цьому знімку приховано)](term_cov.png)
+
+![Рис. А.10 – Перевірки: правила залежностей шарів, самоперевірка перевірки (2 навмисні порушення виявлено), check-pinout (14 рядків, 0 помилок) та історія комітів гілки lab2](term_check.png)
+
+![Рис. А.11 – Декодування записів логічного аналізатора через sigrok-cli: I2C WHO_AM_I (адреса 0x68, дані 0x68), SPI JEDEC ID (0xEF, 0x40, 0x17) та аномалія – адреса 0x69, NACK](term_decode.png)
 
 ## Матеріали та посилання
 
