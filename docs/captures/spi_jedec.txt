@@ -1,0 +1,5 @@
+spiflash-1: Command: Read identification (RDID)
+spiflash-1: Manufacturer ID: 0xef
+spiflash-1: Memory type: 0x40
+spiflash-1: Device ID: 0x17
+spiflash-1: Read identification (RDID): Device = Adesto Unknown

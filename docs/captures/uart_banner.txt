@@ -1,0 +1,120 @@
+uart-1: [0D]
+uart-1: [0A]
+uart-1: h
+uart-1: e
+uart-1: l
+uart-1: l
+uart-1: o
+uart-1:  
+uart-1: f
+uart-1: r
+uart-1: o
+uart-1: m
+uart-1:  
+uart-1: S
+uart-1: T
+uart-1: M
+uart-1: 3
+uart-1: 2
+uart-1:  
+uart-1: (
+uart-1: l
+uart-1: r
+uart-1: 2
+uart-1: )
+uart-1: [0D]
+uart-1: [0A]
+uart-1: S
+uart-1: E
+uart-1: L
+uart-1: F
+uart-1: T
+uart-1: E
+uart-1: S
+uart-1: T
+uart-1:  
+uart-1: B
+uart-1: E
+uart-1: G
+uart-1: I
+uart-1: N
+uart-1:  
+uart-1: v
+uart-1: e
+uart-1: r
+uart-1: s
+uart-1: i
+uart-1: o
+uart-1: n
+uart-1: =
+uart-1: l
+uart-1: r
+uart-1: 2
+uart-1:  
+uart-1: t
+uart-1: _
+uart-1: m
+uart-1: s
+uart-1: =
+uart-1: 4
+uart-1: [0D]
+uart-1: [0A]
+uart-1: D
+uart-1: E
+uart-1: V
+uart-1:  
+uart-1: m
+uart-1: p
+uart-1: u
+uart-1: 6
+uart-1: 0
+uart-1: 5
+uart-1: 0
+uart-1: _
+uart-1: i
+uart-1: d
+uart-1:  
+uart-1: s
+uart-1: t
+uart-1: a
+uart-1: t
+uart-1: u
+uart-1: s
+uart-1: =
+uart-1: O
+uart-1: K
+uart-1:  
+uart-1: a
+uart-1: d
+uart-1: d
+uart-1: r
+uart-1: =
+uart-1: 0
+uart-1: x
+uart-1: 6
+uart-1: 8
+uart-1:  
+uart-1: w
+uart-1: h
+uart-1: o
+uart-1: =
+uart-1: 0
+uart-1: x
+uart-1: 6
+uart-1: 8
+uart-1:  
+uart-1: e
+uart-1: x
+uart-1: p
+uart-1: e
+uart-1: c
+uart-1: t
+uart-1: e
+uart-1: d
+uart-1: =
+uart-1: 0
+uart-1: x
+uart-1: 6
+uart-1: 8
+uart-1: [0D]
+uart-1: [0A]

@@ -1,0 +1,30 @@
+== I2C (main record) ==
+SCL rising edges in burst window: 155
+SCL period median 10.00 us, min 10.00 us, max 12.25 us -> 100.0 kHz
+SCL high width median 5.00 us
+START conditions: 2 STOP conditions: 2
+START->STOP durations (us): [197.2, 1365.0]
+longest transaction (burst read) 1365.00 us, shortest 197.25 us
+
+== manual decode of first byte of i2c_whoami (SDA sampled at SCL rising) ==
+START at 392.40 us; SDA at 9 SCL rising edges: [1, 1, 0, 1, 0, 0, 0, 0, 0]
+first byte = 0xD0 -> addr7=0x68 R/W=0 ACK bit=0 (0=ACK)
+
+== SPI (main record) ==
+SCK rising edges: 32 period median 0.33 us -> 3.08 MHz
+SCK bursts (bytes): [8, 8, 8, 8] gaps between bursts: ['99.40 us', '17.07 us', '17.07 us']
+CS edges: [('333.25 us', 0), ('574.00 us', 1)]
+CS low (JEDEC transaction) 240.75 us; first SCK edge 24.98 us after CS fall
+
+== UART (main record) ==
+shortest low pulse (= 1 bit time) 8.68 us -> 115274 baud
+
+== PWM (main record) ==
+pulse widths (us, rounded to 10) -> count: {1000: 6, 1500: 7, 2000: 5}
+period median 20000.00 us
+
+== ADC marker (ADC record) ==
+marker pulses: 51 width median 63.60 us min 63.60 us max 63.60 us
+marker period median 19995.58 us -> 50.01 Hz
+marker fall -> next I2C START: n=50 median 37.02 us min 37.02 us max 37.02 us
+first marker pulse at 514624.58 us (control loop start)
