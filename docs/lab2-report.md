@@ -81,15 +81,23 @@ ANOMALY spi_mode=3 jedec=FFFFFF expected=EF4017
 
 ![Рис. 1. I2C1: читання WHO_AM_I (0x75) з MPU-6050](lab_2/img/i2c_whoami.png)
 
+![Рис. 1а. PulseView, декодер I²C (SCL = D0, SDA = D1): `S`, `Address write: 68`, `W`, `A`, `Data write: 75`, `A`, `P`, `S`, `Address read: 68`, `R`, `A`, `Data read: 68`, `N`, `P`](lab_2/img/pulseview_i2c_whoami.png)
+
 Декодування sigrok: `Start, Address write 68 ACK, Data write 75 ACK, Stop, Start, Address read 68 ACK, Data read 68 NACK, Stop`. Значення WHO_AM_I = 0x68 збігається з Register Map. Виміряно: період SCL 10.00 мкс (100.0 кГц), ширина високого рівня 5.00 мкс, запис регістра (START→STOP) 197.25 мкс, пакетне читання 14 байтів 1365 мкс. Розрахунок за TIMINGR 0x10805D88: tSCLL = 5.71 мкс, tSCLH = 3.92 мкс, період ≈ 9.63 мкс + фронти → збіг у межах 4 %.
 
 Ручне декодування байта: SDA у моменти дев'яти наростаючих фронтів SCL = `1 1 0 1 0 0 0 0 | 0` → 0xD0 = (0x68 << 1) | 0 (запис), дев'ятий біт 0 – ACK.
 
 ![Рис. 2. Ініціалізація MPU-6050](lab_2/img/i2c_init.png)
 
+![Рис. 2а. PulseView: п'ять записів у регістри MPU-6050 (AW 68, DW 6B 01 / 19 13 / 1A 03 / 1B 00 / 1C 00), перед ними перевірка WHO_AM_I](lab_2/img/pulseview_i2c_init.png)
+
+![Рис. 2б. PulseView: пакетне читання 14 байтів від регістра 0x3B (DW 3B, потім AR 68 і 14 байтів даних, останній – NACK)](lab_2/img/pulseview_i2c_burst.png)
+
 Ініціалізація: PWR_MGMT_1 ← 0x01, SMPLRT_DIV ← 0x13 (50 Гц), CONFIG ← 0x03 (DLPF 44 Гц), GYRO_CONFIG ← 0x00 (±250 °/с), ACCEL_CONFIG ← 0x00 (±2 g). Пакетне читання (14 байтів від 0x3B): `00 00 00 00 40 00 EF 5C 00 …` → az = 16384 LSB = 1 g, температура 24.0 °C за формулою Register Map.
 
 ![Рис. 3. Аномалія: адреса 0x69 – NACK](lab_2/img/i2c_nack.png)
+
+![Рис. 3а. PulseView: `Address write: 69` завершується `NACK`, далі `P` – пристрій з такою адресою відсутній](lab_2/img/pulseview_i2c_nack.png)
 
 Аномалії: (1) адреса 0x69 (AD0 = VCC) – NACK на дев'ятому такті, SDA лишається високою; драйвер розрізняє `NACK` і `TIMEOUT`. (2) Між записом адреси регістра і читанням є STOP, а не повторний START (обхід моделі I2C у Wokwi); реальний чіп це приймає, але на залізі слід увімкнути `BOARD_I2C_REPEATED_START`.
 
@@ -98,6 +106,12 @@ ANOMALY spi_mode=3 jedec=FFFFFF expected=EF4017
 ![Рис. 4. SPI1: команда JEDEC ID (0x9F), відповідь EF 40 17](lab_2/img/spi_jedec.png)
 
 ![Рис. 5. Перший байт команди: біти MOSI у моменти наростаючого фронту SCK](lab_2/img/spi_byte.png)
+
+![Рис. 4а. PulseView, декодери SPI (CLK = D2, MOSI = D3, MISO = D4, CS = D5) і SPI flash: MOSI `9F FF FF FF`, MISO `7F EF 40 17`, команда `Read identification (RDID)`. Назву виробника в підписі декодера (`Adesto`) PulseView бере з власної таблиці; ідентифікатор EF 40 17 відповідає Winbond W25Q64JV за datasheet](lab_2/img/pulseview_spi_jedec.png)
+
+![Рис. 4б. PulseView: запис і читання сторінки – `WREN`, `RDSR` (опитування WIP), `Page program (addr 0x0010F8)`, `Read data (addr 0x0010F8, 16 bytes)`](lab_2/img/pulseview_spi_program_read.png)
+
+![Рис. 4в. PulseView, аномалія SPI mode 3: декодер mode 0 бачить `CF FF FF FF` і `Unknown command: 0xff` замість `9F`](lab_2/img/pulseview_spi_mode3.png)
 
 sigrok (spiflash): `Read identification (RDID): Manufacturer 0xef, Memory type 0x40, Device ID 0x17` – збігається з W25Q64JV. Режим 0 (CPOL = 0, CPHA = 0): SCK у спокої низький, дані стабільні на наростаючому фронті (рис. 5). CS# утримується низьким усю команду. Виміряно: SCK 3.08 МГц (розрахунок 3 МГц), CS низький 240.75 мкс, CS↓ → перший фронт SCK 24.98 мкс, пауза 99.4 мкс між командою і відповіддю (два окремі виклики HAL).
 
@@ -109,11 +123,15 @@ sigrok (spiflash): `Read identification (RDID): Manufacturer 0xef, Memory type 0
 
 ![Рис. 6. USART2: перші символи банера](lab_2/img/uart_bits.png)
 
+![Рис. 6а. PulseView, декодер UART (RX = D6, 115200 8N1): байти `0D 0A 68 65 6C 6C 6F 20 66 72 6F 6D 20 53 54 4D 33 32 20 28 6C 72 32 29 0D 0A` = `hello from STM32 (lr2)`](lab_2/img/pulseview_uart_banner.png)
+
 Біт = 8.68 мкс (115274 бод за вимірюванням; фактично 48 МГц / 417 = 115108 бод). Символ 'h' = 0x68: після start-біта йдуть 0, 0, 0, 1, 0, 1, 1, 0 (LSB першим), потім stop. Текст декодовано sigrok (`hello from STM32 (lr2)`, рядки `DEV …`).
 
 ### 4.4 PWM
 
 ![Рис. 7. TIM3 CH1: ширини 1000 / 1500 / 2000 мкс, період 20 мс](lab_2/img/pwm_widths.png)
+
+![Рис. 7а. PulseView, декодер PWM (D7): період 20.0 мс, duty cycle 5 % → 10 % → 7.5 % (1000, 2000, 1500 мкс)](lab_2/img/pulseview_pwm_demo.png)
 
 Демо-послідовність: 1000, 2000, 1500 мкс по 100 мс. Виміряно (округлено до 10 мкс): 1000, 1500, 2000 мкс; період 20000 мкс (50 Гц). sigrok pwm: duty 5.0 %, 7.5 %, 10.0 %.
 
