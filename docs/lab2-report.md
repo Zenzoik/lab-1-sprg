@@ -129,6 +129,8 @@ sigrok (spiflash): `Read identification (RDID): Manufacturer 0xef, Memory type 0
 
 Правило перевіряється автоматично: `tools/check_deps.py` (`make check-deps`) розбирає `#include` і шукає символи `HAL_`, `LL_` та регістри STM32 в `App/` і `Devices/`; `--selftest` вставляє навмисне порушення і перевіряє, що перевірка падає. Збірка: `make build` у Docker, власний код з `-Wall -Wextra -Wshadow -Wpedantic -Werror` без попереджень. Модулі HAL, версії (CubeMX 6.18.1, FW_C0 V1.4.1, arm-none-eabi-gcc 10.3.1) і component diagram – у `docs/architecture.md`.
 
+![Рис. 9. Component diagram: шари Core, App, Platform, Devices, Drivers, хостові тести і напрямок залежностей](lab_2/img/component_diagram.png)
+
 ## 6. Результати тестування
 
 `make test` запускає 69 перевірок без плати (Docker, gcc, fake-шини):

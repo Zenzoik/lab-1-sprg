@@ -38,6 +38,10 @@ Core ─────────► App ─────► Devices ◄───�
 
 ## 2. Діаграма компонентів
 
+![Component diagram](lab_2/img/component_diagram.png)
+
+Текстовий варіант:
+
 ```
  +---------------------------------------------------------------+
  |  Core/main.c   (CubeMX: тактування, GPIO, I2C1, SPI1, TIM3,    |
