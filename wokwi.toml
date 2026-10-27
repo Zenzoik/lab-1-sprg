@@ -1,0 +1,9 @@
+[wokwi]
+version = 1
+firmware = 'firmware/build/firmware.elf'
+elf = 'firmware/build/firmware.elf'
+
+# Custom SPI-flash model (chips/w25q64, built with `make chips`)
+[[chip]]
+name = 'w25q64'
+binary = 'chips/w25q64/w25q64.chip.wasm'

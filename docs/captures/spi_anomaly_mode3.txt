@@ -1,0 +1,4 @@
+spiflash-1: Unknown command: 0xcf
+spiflash-1: Unknown command: 0xff
+spiflash-1: Unknown command: 0xff
+spiflash-1: Unknown command: 0xff

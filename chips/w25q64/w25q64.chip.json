@@ -1,0 +1,5 @@
+{
+  "name": "W25Q64",
+  "author": "sp-lab",
+  "pins": ["CS", "DO", "WP", "GND", "DI", "CLK", "HOLD", "VCC"]
+}

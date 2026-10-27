@@ -1,0 +1,131 @@
+spiflash-1: Command: Write enable (WREN)
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: No write operation in progress.
+Internal write enable latch is set.
+Block protection bits (BP3-BP0): 0x0.
+Device is not in continuously program mode (CP mode).
+Status register writes are allowed.
+
+spiflash-1: Status register
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Command: Page program (PP)
+spiflash-1: Address bits 23..16: 0x00
+spiflash-1: Address bits 15..8: 0x10
+spiflash-1: Address bits 7..0: 0xf8
+spiflash-1: Address: 0x0010f8
+spiflash-1: Data (8 bytes)
+spiflash-1: Page program (addr 0x0010f8, 8 bytes): a0 a1 a2 a3 a4 a5 a6 a7
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Write operation in progress.
+Internal write enable latch is not set.
+Block protection bits (BP3-BP0): 0x0.
+Device is not in continuously program mode (CP mode).
+Status register writes are allowed.
+
+spiflash-1: Status register
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Write operation in progress.
+Internal write enable latch is not set.
+Block protection bits (BP3-BP0): 0x0.
+Device is not in continuously program mode (CP mode).
+Status register writes are allowed.
+
+spiflash-1: Status register
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Write operation in progress.
+Internal write enable latch is not set.
+Block protection bits (BP3-BP0): 0x0.
+Device is not in continuously program mode (CP mode).
+Status register writes are allowed.
+
+spiflash-1: Status register
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Write operation in progress.
+Internal write enable latch is not set.
+Block protection bits (BP3-BP0): 0x0.
+Device is not in continuously program mode (CP mode).
+Status register writes are allowed.
+
+spiflash-1: Status register
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: No write operation in progress.
+Internal write enable latch is not set.
+Block protection bits (BP3-BP0): 0x0.
+Device is not in continuously program mode (CP mode).
+Status register writes are allowed.
+
+spiflash-1: Status register
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Command: Write enable (WREN)
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: No write operation in progress.
+Internal write enable latch is set.
+Block protection bits (BP3-BP0): 0x0.
+Device is not in continuously program mode (CP mode).
+Status register writes are allowed.
+
+spiflash-1: Status register
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Command: Page program (PP)
+spiflash-1: Address bits 23..16: 0x00
+spiflash-1: Address bits 15..8: 0x11
+spiflash-1: Address bits 7..0: 0x00
+spiflash-1: Address: 0x001100
+spiflash-1: Data (8 bytes)
+spiflash-1: Page program (addr 0x001100, 8 bytes): a8 a9 aa ab ac ad ae af
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Write operation in progress.
+Internal write enable latch is not set.
+Block protection bits (BP3-BP0): 0x0.
+Device is not in continuously program mode (CP mode).
+Status register writes are allowed.
+
+spiflash-1: Status register
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Write operation in progress.
+Internal write enable latch is not set.
+Block protection bits (BP3-BP0): 0x0.
+Device is not in continuously program mode (CP mode).
+Status register writes are allowed.
+
+spiflash-1: Status register
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Write operation in progress.
+Internal write enable latch is not set.
+Block protection bits (BP3-BP0): 0x0.
+Device is not in continuously program mode (CP mode).
+Status register writes are allowed.
+
+spiflash-1: Status register
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Write operation in progress.
+Internal write enable latch is not set.
+Block protection bits (BP3-BP0): 0x0.
+Device is not in continuously program mode (CP mode).
+Status register writes are allowed.
+
+spiflash-1: Status register
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: No write operation in progress.
+Internal write enable latch is not set.
+Block protection bits (BP3-BP0): 0x0.
+Device is not in continuously program mode (CP mode).
+Status register writes are allowed.
+
+spiflash-1: Status register
+spiflash-1: Command: Read status register (RDSR)
+spiflash-1: Command: Read data (READ)
+spiflash-1: Address bits 23..16: 0x00
+spiflash-1: Address bits 15..8: 0x10
+spiflash-1: Address bits 7..0: 0xf8
+spiflash-1: Address: 0x0010f8
+spiflash-1: Data (16 bytes)
+spiflash-1: Read data (addr 0x0010f8, 16 bytes): a0 a1 a2 a3 a4 a5 a6 a7 a8 a9 aa ab ac ad ae af

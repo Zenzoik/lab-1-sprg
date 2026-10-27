@@ -1,0 +1,41 @@
+name: ci
+
+on:
+  push:
+    branches: [main, lab1, lab2]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build toolchain image
+        run: make image
+
+      - name: Build firmware (-Wall -Wextra -Werror for own code)
+        run: make build
+
+      - name: Host unit tests
+        run: make test
+
+      - name: Layer dependencies and pinout consistency
+        run: make check
+
+      - name: Coverage (thresholds are enforced by tests/Makefile)
+        run: make coverage
+
+      - name: Upload build artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lab2-artifacts
+          path: |
+            firmware/build/firmware.elf
+            firmware/build/firmware.map
+            tests/build/coverage.txt
+            tests/build/coverage-branches.txt
+            tests/build/cov/
+          if-no-files-found: warn

@@ -1,0 +1,15 @@
+
+hello from STM32 (lr2)
+SELFTEST BEGIN version=lr2 t_ms=4
+DEV mpu6050_id status=OK addr=0x68 who=0x68 expected=0x68
+DEV mpu6050_data status=OK ax_mg=0 ay_mg=0 az_mg=1000 norm_mg=1000 err_pct=0 temp_cdeg=2401
+DEV w25q64_id status=OK jedec=EF4017 expected=EF4017
+DEV w25q64_erase status=OK addr=0x001000 erase_ms=46 blank=1
+DEV w25q64_rw status=OK addr=0x0010F8 len=16 prog_ms=4 match=1
+DEV adc status=OK raw=0 mv=0 gain_pct=50
+DEV button status=OK pressed=0
+DEV pwm status=OK ch1_us=1500 ch2_us=1500 period_us=20000
+SELFTEST RESULT pass=8 fail=0 t_ms=146
+ANOMALY i2c_probe addr=0x69 result=NACK
+ANOMALY spi_mode=3 jedec=FFFFFF expected=EF4017
+PWM_DEMO ch=1 us=1000 t_ms=180
