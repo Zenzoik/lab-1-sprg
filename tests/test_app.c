@@ -35,7 +35,7 @@ static void test_selftest_all_devices_ok(void) {
   setup();
   ASSERT_EQ_INT(0, app_selftest());
   const char *o = g_board.console;
-  ASSERT_STR_CONTAINS(o, "SELFTEST BEGIN version=lr2");
+  ASSERT_STR_CONTAINS(o, "SELFTEST BEGIN version=lr3");
   ASSERT_STR_CONTAINS(o, "DEV mpu6050_id status=OK addr=0x68 who=0x68 expected=0x68");
   ASSERT_STR_CONTAINS(o, "DEV mpu6050_data status=OK ax_mg=0 ay_mg=0 az_mg=1000 norm_mg=1000");
   ASSERT_STR_CONTAINS(o, "DEV w25q64_id status=OK jedec=EF4017 expected=EF4017");
@@ -132,7 +132,7 @@ static void test_boot_prints_anomalies_and_pwm_demo(void) {
   setup();
   app_boot();
   const char *o = g_board.console;
-  ASSERT_STR_CONTAINS(o, "hello from STM32 (lr2)");
+  ASSERT_STR_CONTAINS(o, "hello from STM32 (lr3)");
   ASSERT_STR_CONTAINS(o, "ANOMALY i2c_probe addr=0x69 result=NACK");
   const char *an = strstr(o, "ANOMALY spi_mode=3 jedec=");
   ASSERT_TRUE(an != NULL);

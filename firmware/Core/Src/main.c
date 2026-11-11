@@ -24,7 +24,7 @@
 #include "app.h"
 #include "platform.h"
 
-  /* USER CODE END Includes */
+/* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
@@ -70,7 +70,6 @@ static void MX_USART2_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
 /* USER CODE END 0 */
 
 /**
@@ -81,6 +80,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+  platform_stack_paint(); /* LR3: stack depth measurement */
 
   /* USER CODE END 1 */
 
@@ -123,7 +123,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     app_poll();
-    /* USER CODE END 3 */
+  /* USER CODE END 3 */
   }
 }
 
@@ -418,33 +418,39 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, PROBE2_Pin|LED_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(FLASH_CS_GPIO_Port, FLASH_CS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOB, FLASH_CS_Pin|STIM_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(MARKER_GPIO_Port, MARKER_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, MARKER_Pin|PROBE0_Pin|PROBE1_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : BUTTON_Pin */
-  GPIO_InitStruct.Pin = BUTTON_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(BUTTON_GPIO_Port, &GPIO_InitStruct);
+  /*Configure GPIO pin : PC13 */
+  GPIO_InitStruct.Pin = GPIO_PIN_13;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : LED_Pin */
-  GPIO_InitStruct.Pin = LED_Pin;
+  /*Configure GPIO pins : PROBE2_Pin LED_Pin */
+  GPIO_InitStruct.Pin = PROBE2_Pin|LED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LED_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : FLASH_CS_Pin MARKER_Pin */
-  GPIO_InitStruct.Pin = FLASH_CS_Pin|MARKER_Pin;
+  /*Configure GPIO pins : FLASH_CS_Pin MARKER_Pin STIM_Pin PROBE0_Pin
+                           PROBE1_Pin */
+  GPIO_InitStruct.Pin = FLASH_CS_Pin|MARKER_Pin|STIM_Pin|PROBE0_Pin
+                          |PROBE1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI4_15_IRQn, 1, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_15_IRQn);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 

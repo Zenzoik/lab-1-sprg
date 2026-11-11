@@ -11,6 +11,12 @@
  *  Call after the CubeMX MX_*_Init() functions. */
 void platform_init(void);
 
+/** Fill the unused stack area with a pattern; call first thing in main() to measure stack depth. */
+void platform_stack_paint(void);
+
+/** Called by SysTick_Handler once per millisecond (after HAL_IncTick): drives the LR3 stimulus. */
+void platform_systick_hook(void);
+
 /** Port table for app_init(). */
 const app_ports_t *platform_ports(void);
 

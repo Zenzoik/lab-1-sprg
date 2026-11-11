@@ -17,6 +17,9 @@
 #define MOTION_GAIN_MIN_PCT 50u
 #define MOTION_GAIN_MAX_PCT 200u
 
+/** Weight of the integrated gyro angle in the complementary filter, percent (FR-04). */
+#define MOTION_CF_GYRO_PCT 98
+
 /** floor(sqrt(v)). */
 uint32_t motion_isqrt(uint32_t v);
 
@@ -38,5 +41,16 @@ uint16_t motion_servo_pulse_us(int32_t angle_cdeg, uint32_t gain_pct);
 
 /** ADC counts -> millivolts for a 3.3 V reference. */
 uint32_t motion_adc_to_mv(uint16_t adc_raw);
+
+/** Complementary filter step (FR-04):
+ *  new = accel + 0.98 * (prev + rate * dt - accel), difference wrapped to +-180 deg.
+ *  @param prev_cdeg   previous filtered angle
+ *  @param rate_mdps   angular rate around the matching axis in milli-degrees per second
+ *  @param dt_ms       time since the previous step (milliseconds)
+ *  @param accel_cdeg  angle from the accelerometer alone */
+int32_t motion_cf_update(int32_t prev_cdeg, int32_t rate_mdps, uint32_t dt_ms, int32_t accel_cdeg);
+
+/** Difference a - b wrapped into (-18000, 18000]. */
+int32_t motion_wrap_diff_cdeg(int32_t a, int32_t b);
 
 #endif /* APP_MOTION_H */

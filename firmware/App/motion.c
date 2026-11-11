@@ -92,3 +92,22 @@ uint16_t motion_servo_pulse_us(int32_t angle_cdeg, uint32_t gain_pct) {
 uint32_t motion_adc_to_mv(uint16_t adc_raw) {
   return ((uint32_t)adc_raw * 3300u + 2047u) / 4095u;
 }
+
+int32_t motion_wrap_diff_cdeg(int32_t a, int32_t b) {
+  int32_t d = a - b;
+  while (d > 18000) {
+    d -= 36000;
+  }
+  while (d <= -18000) {
+    d += 36000;
+  }
+  return d;
+}
+
+int32_t motion_cf_update(int32_t prev_cdeg, int32_t rate_mdps, uint32_t dt_ms, int32_t accel_cdeg) {
+  /* rate [mdps] * dt [ms] / 1e6 = degrees = rate * dt / 1e4 centi-degrees */
+  const int32_t step = (int32_t)(((int64_t)rate_mdps * (int64_t)dt_ms) / 10000);
+  const int32_t predicted = prev_cdeg + step;
+  const int32_t err = motion_wrap_diff_cdeg(predicted, accel_cdeg);
+  return motion_wrap_diff_cdeg(accel_cdeg + (err * MOTION_CF_GYRO_PCT) / 100, 0);
+}

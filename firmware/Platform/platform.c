@@ -1,5 +1,6 @@
 #include "platform.h"
 
+#include <stddef.h>
 #include <stdint.h>
 
 #include "board.h"
@@ -207,15 +208,25 @@ static void uart_write(const char *s, size_t n) {
   (void)HAL_UART_Transmit(BOARD_UART, (uint8_t *)(uintptr_t)s, (uint16_t)n, BOARD_UART_TX_TIMEOUT_MS);
 }
 
+static volatile uint32_t g_rx_bytes;
+static volatile uint32_t g_rx_overruns;
+
 static int uart_read_char(void) {
   UART_HandleTypeDef *u = BOARD_UART;
   if (__HAL_UART_GET_FLAG(u, UART_FLAG_ORE) != RESET) {
+    g_rx_overruns++; /* a byte was lost because the loop did not read the receiver in time */
     __HAL_UART_CLEAR_OREFLAG(u);
   }
   if (__HAL_UART_GET_FLAG(u, UART_FLAG_RXNE) != RESET) {
+    g_rx_bytes++;
     return (int)(u->Instance->RDR & 0xFFu);
   }
   return -1;
+}
+
+static void uart_rx_stats(uint32_t *bytes, uint32_t *overruns) {
+  *bytes = g_rx_bytes;
+  *overruns = g_rx_overruns;
 }
 
 /* newlib hook: printf() -> USART2 (kept for debugging; the app uses uart_write) */
@@ -272,6 +283,220 @@ static uint16_t pwm_get_us(unsigned ch) {
   return (uint16_t)__HAL_TIM_GET_COMPARE(BOARD_PWM_TIM, pwm_channel(ch));
 }
 
+
+/* ---------------------------------------------------------------- LR3: time base and probes */
+
+/* The Cortex-M0+ has no DWT cycle counter. The cycle count is built from SysTick: the tick
+ * counter (1 ms) times the reload value plus the part of the current millisecond already
+ * elapsed (LOAD - VAL, SysTick counts down). The re-read loop rejects a sample taken while the
+ * tick interrupt fired between the two reads. Valid for 2^32 / 48e6 = 89 s before it wraps;
+ * unsigned differences stay correct across one wrap. */
+static uint32_t cycles_now(void) {
+  uint32_t m1;
+  uint32_t m2;
+  uint32_t v;
+  do {
+    m1 = HAL_GetTick();
+    v = SysTick->VAL;
+    m2 = HAL_GetTick();
+  } while (m1 != m2);
+  return (m1 * (SysTick->LOAD + 1u)) + (SysTick->LOAD - v);
+}
+
+static void probe_write(unsigned ch, int level) {
+  const GPIO_PinState st = level ? GPIO_PIN_SET : GPIO_PIN_RESET;
+  switch (ch) {
+    case 0u:
+      HAL_GPIO_WritePin(BOARD_PROBE0_PORT, BOARD_PROBE0_PIN, st);
+      break;
+    case 1u:
+      HAL_GPIO_WritePin(BOARD_PROBE1_PORT, BOARD_PROBE1_PIN, st);
+      break;
+    case 2u:
+      HAL_GPIO_WritePin(BOARD_PROBE2_PORT, BOARD_PROBE2_PIN, st);
+      break;
+    default:
+      break;
+  }
+}
+
+/* ---------------------------------------------------------------- LR3: button events and stimulus */
+
+#define EVQ_SIZE 16u
+#define STIM_PRESS_MS 15u
+
+static volatile btn_event_t g_evq[EVQ_SIZE];
+static volatile uint32_t g_ev_head; /* written by the ISR */
+static volatile uint32_t g_ev_tail; /* written by the main loop */
+static volatile uint32_t g_ev_dropped;
+
+static volatile uint32_t g_edge_cyc; /* time of the last stimulus edge */
+static volatile int g_edge_valid;
+static int g_btn_irq = 1;
+static int g_poll_prev = 1; /* pin level seen by the polling detector, 1 = released */
+
+static uint32_t g_rng = 0x2545F491u; /* xorshift32: reproducible stimulus pattern */
+static volatile unsigned g_stim_mode;
+static volatile uint32_t g_stim_next_ms;
+static volatile uint32_t g_stim_release_ms;
+static volatile int g_stim_down;
+static volatile uint32_t g_stim_manual_ms;
+
+static uint32_t rng_next(void) {
+  g_rng ^= g_rng << 13;
+  g_rng ^= g_rng >> 17;
+  g_rng ^= g_rng << 5;
+  return g_rng;
+}
+
+static uint32_t stim_interval_ms(void) {
+  /* mode 1: rare presses, 400..1500 ms apart; mode 2: frequent, 40..240 ms apart */
+  return (g_stim_mode == 2u) ? (40u + (rng_next() % 200u)) : (400u + (rng_next() % 1100u));
+}
+
+static void queue_event(uint32_t t_edge, uint32_t t_isr) {
+  const uint32_t h = g_ev_head;
+  if (((h + 1u) % EVQ_SIZE) == g_ev_tail) {
+    g_ev_dropped++;
+    return;
+  }
+  g_evq[h].t_edge = t_edge;
+  g_evq[h].t_isr = t_isr;
+  g_ev_head = (h + 1u) % EVQ_SIZE;
+}
+
+/* edge time: the stimulus generator knows it exactly; a real button edge is only known when seen */
+static uint32_t take_edge_time(uint32_t t_seen) {
+  if (g_edge_valid != 0) {
+    g_edge_valid = 0;
+    return g_edge_cyc;
+  }
+  return t_seen;
+}
+
+/* EXTI4_15 -> HAL_GPIO_EXTI_IRQHandler() -> this callback (falling edge of the button line) */
+void HAL_GPIO_EXTI_Falling_Callback(uint16_t pin) {
+  if (pin == BOARD_BUTTON_PIN) {
+    const uint32_t t_isr = cycles_now();
+    queue_event(take_edge_time(t_isr), t_isr);
+  }
+}
+
+static int button_event(btn_event_t *ev) {
+  if (g_btn_irq == 0) { /* polling: the main loop looks at the pin itself */
+    const int level = (HAL_GPIO_ReadPin(BOARD_BUTTON_PORT, BOARD_BUTTON_PIN) == GPIO_PIN_SET) ? 1 : 0;
+    const int fell = (g_poll_prev == 1 && level == 0);
+    g_poll_prev = level;
+    if (fell) {
+      const uint32_t t = cycles_now();
+      queue_event(take_edge_time(t), t);
+    }
+  }
+  if (g_ev_tail == g_ev_head) {
+    return 0;
+  }
+  ev->t_edge = g_evq[g_ev_tail].t_edge;
+  ev->t_isr = g_evq[g_ev_tail].t_isr;
+  g_ev_tail = (g_ev_tail + 1u) % EVQ_SIZE;
+  return 1;
+}
+
+static void btn_mode_set(int irq) {
+  GPIO_InitTypeDef g = {0};
+  g.Pin = BOARD_BUTTON_PIN;
+  g.Pull = GPIO_PULLUP;
+  g.Mode = irq ? GPIO_MODE_IT_FALLING : GPIO_MODE_INPUT;
+  HAL_GPIO_DeInit(BOARD_BUTTON_PORT, BOARD_BUTTON_PIN); /* HAL_GPIO_Init(INPUT) leaves the EXTI line armed */
+  HAL_GPIO_Init(BOARD_BUTTON_PORT, &g);
+  __HAL_GPIO_EXTI_CLEAR_FALLING_IT(BOARD_BUTTON_PIN);
+  g_btn_irq = (irq != 0);
+  g_poll_prev = (HAL_GPIO_ReadPin(BOARD_BUTTON_PORT, BOARD_BUTTON_PIN) == GPIO_PIN_SET) ? 1 : 0;
+  g_ev_tail = g_ev_head; /* drop stale events */
+}
+
+static void stim_press_now(uint32_t now_ms, uint32_t ms) {
+  g_edge_cyc = cycles_now();
+  g_edge_valid = 1;
+  HAL_GPIO_WritePin(BOARD_STIM_PORT, BOARD_STIM_PIN, GPIO_PIN_RESET); /* button pressed */
+  g_stim_down = 1;
+  g_stim_release_ms = now_ms + ms;
+}
+
+void platform_systick_hook(void) {
+  const uint32_t now = HAL_GetTick();
+  if (g_stim_down != 0) {
+    if ((int32_t)(now - g_stim_release_ms) >= 0) {
+      HAL_GPIO_WritePin(BOARD_STIM_PORT, BOARD_STIM_PIN, GPIO_PIN_SET); /* released */
+      g_stim_down = 0;
+    }
+    return;
+  }
+  if (g_stim_manual_ms != 0u) {
+    const uint32_t ms = g_stim_manual_ms;
+    g_stim_manual_ms = 0u;
+    stim_press_now(now, ms);
+    return;
+  }
+  if (g_stim_mode != 0u && (int32_t)(now - g_stim_next_ms) >= 0) {
+    stim_press_now(now, STIM_PRESS_MS);
+    g_stim_next_ms = now + stim_interval_ms();
+  }
+}
+
+static void stim_set(unsigned mode) {
+  g_stim_mode = mode;
+  g_stim_next_ms = HAL_GetTick() + stim_interval_ms();
+}
+
+static void stim_press(uint32_t ms) {
+  g_stim_manual_ms = ms;
+}
+
+/* ---------------------------------------------------------------- LR3: memory and reboot */
+
+extern char _estack;               /* linker script: top of RAM */
+extern char _end;                  /* linker script: end of .bss = start of the heap */
+extern void *_sbrk(ptrdiff_t incr);
+
+#define STACK_PATTERN 0xA5A5A5A5u
+#define STACK_RESERVED 0x800u /* = _Min_Stack_Size in STM32C031xx_FLASH.ld */
+
+/* The pattern is painted from the end of .bss (the unused heap reserve is below the reserved stack),
+ * so a stack deeper than STACK_RESERVED is seen as used > size instead of saturating at the size. */
+static uint32_t stack_lo(void) {
+  return ((uint32_t)&_end + 3u) & ~3u;
+}
+
+void platform_stack_paint(void) {
+  uint32_t *p = (uint32_t *)stack_lo();
+  uint32_t *sp = (uint32_t *)__get_MSP();
+  while (p < sp - 16) { /* stay clear of the frames that are alive right now */
+    *p++ = STACK_PATTERN;
+  }
+}
+
+static uint32_t stack_size(void) {
+  return STACK_RESERVED;
+}
+
+static uint32_t stack_used(void) {
+  const uint32_t *p = (const uint32_t *)stack_lo();
+  const uint32_t *top = (const uint32_t *)&_estack;
+  while (p < top && *p == STACK_PATTERN) {
+    p++;
+  }
+  return (uint32_t)((const uint8_t *)top - (const uint8_t *)p);
+}
+
+static uint32_t heap_used(void) {
+  return (uint32_t)((uint8_t *)_sbrk(0) - (uint8_t *)&_end);
+}
+
+static void reboot(void) {
+  HAL_Delay(20); /* let the last UART bytes leave */
+  NVIC_SystemReset();
+}
+
 /* ---------------------------------------------------------------- port table */
 
 static i2c_bus_t g_i2c;
@@ -298,6 +523,25 @@ void platform_init(void) {
   marker(0);
   led_write(0);
 
+  /* LR3 service pins: stimulus (idle high = button released) and three logic analyzer probes. */
+  GPIO_InitTypeDef gi = {0};
+  gi.Mode = GPIO_MODE_OUTPUT_PP;
+  gi.Pull = GPIO_NOPULL;
+  gi.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_WritePin(BOARD_STIM_PORT, BOARD_STIM_PIN, GPIO_PIN_SET);
+  gi.Pin = BOARD_STIM_PIN;
+  HAL_GPIO_Init(BOARD_STIM_PORT, &gi);
+  for (unsigned ch = 0; ch < 3u; ch++) {
+    probe_write(ch, 0);
+  }
+  gi.Pin = BOARD_PROBE0_PIN | BOARD_PROBE1_PIN;
+  HAL_GPIO_Init(GPIOB, &gi);
+  gi.Pin = BOARD_PROBE2_PIN;
+  HAL_GPIO_Init(GPIOA, &gi);
+  HAL_NVIC_SetPriority(EXTI4_15_IRQn, 1, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_15_IRQn);
+  btn_mode_set(1);
+
   g_ports = (app_ports_t){
       .i2c = &g_i2c,
       .spi = &g_spi,
@@ -314,6 +558,18 @@ void platform_init(void) {
       .pwm_set_us = pwm_set_us,
       .pwm_get_us = pwm_get_us,
       .spi_set_mode = spi_set_mode,
+      .cycles = cycles_now,
+      .cycles_per_us = BOARD_CORE_MHZ,
+      .probe = probe_write,
+      .button_event = button_event,
+      .btn_mode_set = btn_mode_set,
+      .stim_set = stim_set,
+      .stim_press = stim_press,
+      .uart_rx_stats = uart_rx_stats,
+      .stack_used = stack_used,
+      .stack_size = stack_size,
+      .heap_used = heap_used,
+      .reboot = reboot,
   };
 }
 

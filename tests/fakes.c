@@ -293,6 +293,69 @@ static int fb_spi_mode(unsigned mode) {
   return 0;
 }
 
+
+static uint32_t fb_cycles(void) {
+  return g_b->now_ms * 48000u;
+}
+
+static void fb_probe(unsigned ch, int level) {
+  if (ch < 3u) {
+    if (level != g_b->probe_level[ch]) {
+      g_b->probe_edges[ch]++;
+    }
+    g_b->probe_level[ch] = level;
+  }
+}
+
+static int fb_button_event(btn_event_t *ev) {
+  if (g_b->ev_pos < g_b->ev_n) {
+    *ev = g_b->ev_script[g_b->ev_pos++];
+    return 1;
+  }
+  return 0;
+}
+
+static void fb_btn_mode(int irq) {
+  g_b->btn_irq = irq;
+}
+
+static void fb_stim_set(unsigned mode) {
+  g_b->stim_mode = mode;
+}
+
+static void fb_stim_press(uint32_t ms) {
+  g_b->stim_press_ms = ms;
+}
+
+static void fb_rx_stats(uint32_t *bytes, uint32_t *ore) {
+  *bytes = g_b->rx_bytes;
+  *ore = g_b->rx_overruns;
+}
+
+static uint32_t fb_stack_used(void) {
+  return g_b->stack_used;
+}
+
+static uint32_t fb_stack_size(void) {
+  return 1024u;
+}
+
+static uint32_t fb_heap_used(void) {
+  return g_b->heap_used;
+}
+
+static void fb_reboot(void) {
+  g_b->reboots++;
+}
+
+void fake_board_push_event(fake_board_t *b, uint32_t t_edge, uint32_t t_isr) {
+  if (b->ev_n < 64) {
+    b->ev_script[b->ev_n].t_edge = t_edge;
+    b->ev_script[b->ev_n].t_isr = t_isr;
+    b->ev_n++;
+  }
+}
+
 void fake_board_init(fake_board_t *b, fake_i2c_t *i2c, fake_spi_t *spi) {
   memset(b, 0, sizeof *b);
   g_b = b;
@@ -313,6 +376,18 @@ void fake_board_init(fake_board_t *b, fake_i2c_t *i2c, fake_spi_t *spi) {
   b->ports.pwm_set_us = fb_pwm_set;
   b->ports.pwm_get_us = fb_pwm_get;
   b->ports.spi_set_mode = fb_spi_mode;
+  b->ports.cycles = fb_cycles;
+  b->ports.cycles_per_us = 48u;
+  b->ports.probe = fb_probe;
+  b->ports.button_event = fb_button_event;
+  b->ports.btn_mode_set = fb_btn_mode;
+  b->ports.stim_set = fb_stim_set;
+  b->ports.stim_press = fb_stim_press;
+  b->ports.uart_rx_stats = fb_rx_stats;
+  b->ports.stack_used = fb_stack_used;
+  b->ports.stack_size = fb_stack_size;
+  b->ports.heap_used = fb_heap_used;
+  b->ports.reboot = fb_reboot;
 }
 
 void fake_board_clear_console(fake_board_t *b) {

@@ -23,6 +23,7 @@ int suite_motion(void);
 int suite_mpu6050(void);
 int suite_w25q64(void);
 int suite_app(void);
+int suite_lr3(void);
 
 int main(void) {
   int failed = 0;
@@ -30,6 +31,7 @@ int main(void) {
   failed += suite_mpu6050();
   failed += suite_w25q64();
   failed += suite_app();
+  failed += suite_lr3();
   printf("\n%s: %d test(s) failed\n", failed ? "FAILED" : "PASSED", failed);
   return failed ? 1 : 0;
 }

@@ -49,7 +49,7 @@ void fake_i2c_set_burst(fake_i2c_t *f, const uint8_t burst[14]);
 /* ------------------------------------------------------------------ SPI */
 
 #define FAKE_SPI_LOG_MAX 128
-#define FAKE_SPI_MEM 0x4000u /* 16 KiB of NOR is enough for the tests */
+#define FAKE_SPI_MEM 0x8000u /* 32 KiB of NOR: scratch sectors + the 4 journal sectors */
 
 typedef struct {
   uint8_t op;
@@ -103,6 +103,20 @@ typedef struct {
   int marker_level;
   int marker_edges;
   uint16_t pwm[3];
+  /* LR3 ports */
+  int probe_level[3];
+  int probe_edges[3];
+  btn_event_t ev_script[64]; /* events returned by button_event() in order */
+  int ev_n;
+  int ev_pos;
+  int btn_irq;
+  unsigned stim_mode;
+  uint32_t stim_press_ms;
+  uint32_t rx_bytes;
+  uint32_t rx_overruns;
+  uint32_t stack_used;
+  uint32_t heap_used;
+  int reboots;
   unsigned spi_mode;
   fake_i2c_t *i2c;
   fake_spi_t *spi;
@@ -111,5 +125,7 @@ typedef struct {
 
 void fake_board_init(fake_board_t *b, fake_i2c_t *i2c, fake_spi_t *spi);
 void fake_board_clear_console(fake_board_t *b);
+/** Queue a button event for button_event(); times are CPU cycles. */
+void fake_board_push_event(fake_board_t *b, uint32_t t_edge, uint32_t t_isr);
 
 #endif /* TESTS_FAKES_H */

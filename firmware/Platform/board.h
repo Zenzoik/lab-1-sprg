@@ -33,6 +33,19 @@ extern UART_HandleTypeDef huart2;
 #define BOARD_BUTTON_PORT GPIOC
 #define BOARD_BUTTON_PIN GPIO_PIN_13
 
+/* PINOUT: PB2 | GPIO output | LR3 stimulus generator, wired to PC13 in the simulator (diagram.json) */
+#define BOARD_STIM_PORT GPIOB
+#define BOARD_STIM_PIN GPIO_PIN_2
+/* PINOUT: PB6 | GPIO output | LR3 probe 0: control (IMU) task window, logic analyzer D0 */
+#define BOARD_PROBE0_PORT GPIOB
+#define BOARD_PROBE0_PIN GPIO_PIN_6
+/* PINOUT: PB7 | GPIO output | LR3 probe 1: long operation (flash erase/program), logic analyzer D1 */
+#define BOARD_PROBE1_PORT GPIOB
+#define BOARD_PROBE1_PIN GPIO_PIN_7
+/* PINOUT: PA1 | GPIO output | LR3 probe 2: button event reaction, logic analyzer D2 */
+#define BOARD_PROBE2_PORT GPIOA
+#define BOARD_PROBE2_PIN GPIO_PIN_1
+
 /* --- Peripherals ------------------------------------------------------ */
 /* PINOUT: PA9/PA10 | I2C1 SCL/SDA AF6 | MPU-6050 */
 #define BOARD_I2C (&hi2c1)
@@ -50,6 +63,8 @@ extern UART_HandleTypeDef huart2;
 #define BOARD_SPI_TIMEOUT_MS 20u
 #define BOARD_UART_TX_TIMEOUT_MS 100u
 #define BOARD_ADC_TIMEOUT_MS 10u
+/* Core clock in MHz, used to convert the cycle counter to microseconds (SystemCoreClock = 48 MHz). */
+#define BOARD_CORE_MHZ 48u
 
 /* Simulator workarounds (Wokwi). Real hardware: define both as 0 and 1 respectively
  * (see docs/lab2-report.md, section "What cannot be verified in the simulator").
