@@ -1,0 +1,50 @@
+﻿build/firmware.elf  :
+section               size        addr
+.isr_vector            192   134217728
+.text                25084   134217920
+.rodata               3572   134243004
+.ARM.extab               0   134246576
+.ARM                     8   134246576
+.preinit_array           0   134246584
+.init_array              4   134246584
+.fini_array              4   134246588
+.data                  120   536870912
+.bss                  2448   536871032
+._user_heap_stack     2560   536873480
+.ARM.attributes         40           0
+.comment                51           0
+.debug_info         166134           0
+.debug_abbrev        20244           0
+.debug_loc           46772           0
+.debug_aranges        1192           0
+.debug_ranges         8152           0
+.debug_line          48413           0
+.debug_str           32886           0
+.debug_frame          3928           0
+Total               361804
+
+
+---NM
+134233384 00000266 T __udivsi3
+134230708 00000276 T __ssprint_r
+134218316 00000284 t HAL_RCCEx_PeriphCLKConfig
+134223452 00000312 t I2C_WaitOnFlagUntilTimeout.constprop.0
+134231556 00000314 T _printf_common
+134218600 00000360 t HAL_GPIO_Init
+134225656 00000360 t HAL_SPI_Init.constprop.0
+134234360 00000406 T __udivmoddi4
+134223000 00000452 t spi_xfer
+134234852 00000460 T __divdi3
+134233660 00000460 T __divsi3
+134219756 00000464 t MX_I2C1_Init
+134224120 00000492 t adc_read
+134222468 00000532 t HAL_SPI_TransmitReceive.constprop.0
+134226628 00000560 t MX_TIM3_Init
+134230984 00000572 T _svfiprintf_r
+134230984 00000572 T _svfprintf_r
+134231872 00000648 T _printf_i
+134218960 00000796 t MX_ADC1_Init
+134228028 00001056 t app_selftest.isra.0
+536871864 00001576 b g_app
+134235372 00007460 T main
+---END

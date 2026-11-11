@@ -1,0 +1,2 @@
+== S3 - S3 worst: telemetry 5 Hz, journal 10 Hz, sector rewrite every 1 s, frequent presses
+   imu n=1438 max=2167  loop max=59676  ev_lat n=214 max=58650  jit=59315

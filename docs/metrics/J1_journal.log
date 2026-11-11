@@ -1,0 +1,59 @@
+>> help
+CMD help | selftest | whoami | jedec | probe <hex addr7> | reg <addr7> <reg> [n] | regw <addr7> <reg> <val> | pwm <1|2> <us> | adc | anomaly
+CMD lr3: scn <0..3> [sec] | set <imu|tlm|jrn|lop|stim|btn> <v> | stats | jit | mem | rx | evlog | press <ms> | jv | jtorn | ping | reboot
+TLM t_ms=404986 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+>> scn 2 15
+SCN BEGIN n=2 sec=15 version=lr3 git=f96e864-dirty imu_ms=20 tlm_ms=1000 jrn_ms=500 lop_ms=0 stim=1 btn=irq
+TLM t_ms=406920 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=407920 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=408920 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=409920 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=410920 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=411920 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=412920 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=413920 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=414920 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=415920 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=416920 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=417920 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=418920 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=419920 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=420920 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+SCN END n=2 t_ms=420932
+STAT name=imu n=749 min_us=2042 avg_us=2080 max_us=2095
+STAT name=loop n=102353 min_us=103 avg_us=146 max_us=12738
+STAT name=ctl_lat n=749 min_us=2038 avg_us=2331 max_us=14482
+STAT name=telemetry n=15 min_us=10743 avg_us=10755 max_us=10819
+STAT name=journal n=30 min_us=1673 avg_us=1678 max_us=1682
+STAT name=cli n=1 min_us=12226 avg_us=12226 max_us=12226
+STAT name=ev_lat n=15 min_us=96 avg_us=823 max_us=9726
+STAT name=ev_irq n=15 min_us=7 avg_us=8 max_us=8
+STAT name=load n=14 min_pct=12 avg_pct=12 max_pct=12
+JIT period_us=20000 min_us=-12346 max_us=12413 missed=0 hist=630,88,0,2,28,0
+MEM stack_used=1128 stack_size=2048 heap_used=0
+RX bytes=15112 overruns=0 cmds=0
+EVLOG total=15 stored=15
+EVT n=1 t_us=1347483 lat_us=154
+EVT n=2 t_us=2167483 lat_us=166
+EVT n=3 t_us=2941483 lat_us=756
+EVT n=4 t_us=3447483 lat_us=173
+EVT n=5 t_us=4639483 lat_us=179
+EVT n=6 t_us=5372483 lat_us=182
+EVT n=7 t_us=5945483 lat_us=116
+EVT n=8 t_us=6512483 lat_us=149
+EVT n=9 t_us=7002483 lat_us=9726
+EVT n=10 t_us=7910483 lat_us=113
+EVT n=11 t_us=9173483 lat_us=123
+EVT n=12 t_us=10528483 lat_us=156
+EVT n=13 t_us=11936483 lat_us=109
+EVT n=14 t_us=13198483 lat_us=151
+EVT n=15 t_us=13890483 lat_us=96
+SCN DONE n=2
+>> jv
+JOURNAL status=OK good=625 bad=0 blank=0 erases=3 errors=0 next=0x004710
+>> jtorn
+TLM t_ms=422079 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD jtorn status=OK
+>> jv
+JOURNAL status=OK good=625 bad=1 blank=0 erases=3 errors=0 next=0x004720
+TLM t_ms=423309 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500

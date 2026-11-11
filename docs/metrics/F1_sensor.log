@@ -1,0 +1,117 @@
+>> help
+CMD help | selftest | whoami | jedec | probe <hex addr7> | reg <addr7> <reg> [n] | regw <addr7> <reg> <val> | pwm <1|2> <us> | adc | anomaly
+CMD lr3: scn <0..3> [sec] | set <imu|tlm|jrn|lop|stim|btn> <v> | stats | jit | mem | rx | evlog | press <ms> | jv | jtorn | ping | reboot
+TLM t_ms=773532 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+>> set tlm 500
+CMD set imu_ms=20 tlm_ms=500 jrn_ms=0 lop_ms=0 stim=0 btn=irq
+T>> set jrn 0
+LM t_ms=774930 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=775430 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD set imu_ms=20 tlm_ms=500 jrn_ms=0 lop_ms=0 stim=0 btn=irq
+T>> set lop 0
+LM t_ms=776123 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=776623 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD set imu_ms=20 tlm_ms=500 jrn_ms=0 lop_ms=0 stim=0 btn=irq
+T>> set stim 0
+LM t_ms=777313 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=777813 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD set imu_ms=20 tlm_ms=500 jrn_ms=0 lop_ms=0 stim=0 btn=irq
+>> scn 0 40
+TLM t_ms=778590 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=779090 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+SCN BEGIN n=0 sec=40 version=lr3 git=f96e864-dirty imu_ms=20 tlm_ms=500 jrn_ms=0 lop_ms=0 stim=0 btn=irq
+TLM t_ms=779703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=780203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=780703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=781203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=781703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+ERROR mpu6050 lost, servos centred
+TLM t_ms=782203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=782703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=783203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=783703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=784203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=784703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=785203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=785703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=786203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=786703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=787203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=787703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=788203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=788703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=789203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=789703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=790203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=790703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=791203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=791703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=792203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=792703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=793203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+TLM t_ms=793703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=error p1_us=1500 p2_us=1500
+INFO mpu6050 recovered
+TLM t_ms=794203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=794703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=795203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=795703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=796203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=796703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=797203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=797703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=798203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=798703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=799203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=799703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=800203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=800703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=801203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=801703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=802203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=802703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=803203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=803703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=804203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=804703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=805203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=805703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=806203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=806703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=807203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=807703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=808203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=808703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=809203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=809703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=810203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=810703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=811203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=811703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=812203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=812703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=813203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=813703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=814203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=814703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=815203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=815703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=816203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=816703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=817203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=817703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=818203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=818703 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=819203 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+SCN END n=0 t_ms=819214
+STAT name=imu n=1400 min_us=1985 avg_us=2085 max_us=3690
+STAT name=loop n=285225 min_us=100 avg_us=140 max_us=11109
+STAT name=ctl_lat n=1399 min_us=2036 avg_us=2502 max_us=12180
+STAT name=telemetry n=80 min_us=10781 avg_us=10815 max_us=10888
+STAT name=cli n=1 min_us=11928 avg_us=11928 max_us=11928
+STAT name=recover n=12 min_us=134 avg_us=512 max_us=4673
+STAT name=load n=39 min_pct=2 avg_pct=9 max_pct=13
+JIT period_us=20000 min_us=-10078 max_us=11984888 missed=599 hist=1159,128,0,1,110,1
+MEM stack_used=1128 stack_size=2048 heap_used=0
+RX bytes=16200 overruns=0 cmds=0
+EVLOG total=0 stored=0
+SCN DONE n=0

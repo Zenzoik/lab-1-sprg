@@ -1,0 +1,66 @@
+>> help
+CMD help | selftest | whoami | jedec | probe <hex addr7> | reg <addr7> <reg> [n] | regw <addr7> <reg> <val> | pwm <1|2> <us> | adc | anomaly
+CMD lr3: scn <0..3> [sec] | set <imu|tlm|jrn|lop|stim|btn> <v> | stats | jit | mem | rx | evlog | press <ms> | jv | jtorn | ping | reboot
+>> set tlm 0
+TLM t_ms=21493 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=0 stim=0 btn=irq
+>> set jrn 0
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=0 stim=0 btn=irq
+>> set lop 500
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=500 stim=0 btn=irq
+>> set stim 1
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=500 stim=1 btn=irq
+>> set btn poll
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=500 stim=1 btn=poll
+>> scn 0 40
+SCN BEGIN n=0 sec=40 version=lr3 git=f96e864-dirty imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=500 stim=1 btn=poll
+SCN END n=0 t_ms=68537
+STAT name=imu n=1841 min_us=2048 avg_us=2082 max_us=2132
+STAT name=loop n=249078 min_us=104 avg_us=160 max_us=47195
+STAT name=ctl_lat n=1841 min_us=2037 avg_us=2397 max_us=9062
+STAT name=longop n=80 min_us=46919 avg_us=46926 max_us=46955
+STAT name=cli n=1 min_us=12052 avg_us=12052 max_us=12052
+STAT name=ev_lat n=36 min_us=72 avg_us=247 max_us=1563
+STAT name=ev_irq n=36 min_us=55 avg_us=229 max_us=1545
+STAT name=load n=39 min_pct=19 avg_pct=19 max_pct=19
+JIT period_us=20000 min_us=-6930 max_us=46974 missed=158 hist=1674,8,0,0,79,79
+MEM stack_used=1128 stack_size=2048 heap_used=0
+RX bytes=70 overruns=0 cmds=0
+EVLOG total=36 stored=36
+EVT n=1 t_us=1216675 lat_us=142
+EVT n=2 t_us=1877675 lat_us=199
+EVT n=3 t_us=2910675 lat_us=112
+EVT n=4 t_us=4314675 lat_us=133
+EVT n=5 t_us=4980675 lat_us=1563
+EVT n=6 t_us=5960675 lat_us=1531
+EVT n=7 t_us=7418675 lat_us=195
+EVT n=8 t_us=8813675 lat_us=135
+EVT n=9 t_us=10270675 lat_us=181
+EVT n=10 t_us=11192675 lat_us=134
+EVT n=11 t_us=12597675 lat_us=82
+EVT n=12 t_us=14067675 lat_us=159
+EVT n=13 t_us=16705675 lat_us=148
+EVT n=14 t_us=18150675 lat_us=141
+EVT n=15 t_us=18553675 lat_us=128
+EVT n=16 t_us=19050675 lat_us=95
+EVT n=17 t_us=19948675 lat_us=72
+EVT n=18 t_us=21094675 lat_us=161
+EVT n=19 t_us=22421675 lat_us=634
+EVT n=20 t_us=23817675 lat_us=95
+EVT n=21 t_us=24919675 lat_us=168
+EVT n=22 t_us=26222675 lat_us=82
+EVT n=23 t_us=27254675 lat_us=154
+EVT n=24 t_us=27949675 lat_us=187
+EVT n=25 t_us=29226675 lat_us=174
+EVT n=26 t_us=30678675 lat_us=81
+EVT n=27 t_us=31690675 lat_us=184
+EVT n=28 t_us=32441675 lat_us=619
+EVT n=29 t_us=33643675 lat_us=195
+EVT n=30 t_us=34132675 lat_us=77
+EVT n=31 t_us=34549675 lat_us=129
+EVT n=32 t_us=35851675 lat_us=158
+EVT n=33 t_us=36724675 lat_us=112
+EVT n=34 t_us=37747675 lat_us=129
+EVT n=35 t_us=38230675 lat_us=198
+EVT n=36 t_us=39424675 lat_us=194
+SCN DONE n=0

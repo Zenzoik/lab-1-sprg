@@ -1,0 +1,3 @@
+== E2_irq_longop - 6.2-2 button events by EXTI during sector rewrites (every 500 ms)
+   imu n=1841 max=2150  loop max=47193  ev_lat n=37 max=40184  jit=46341
+VCD -> C:\KPI\sp-lab\docs\captures\lr3_E2.vcd 394 bytes

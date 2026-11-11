@@ -1,0 +1,4 @@
+== E3_poll_longop - 6.2-2 button events by polling during sector rewrites (every 500 ms)
+   imu n=1841 max=2132  loop max=47195  ev_lat n=36 max=1563  jit=46974
+== E1_irq_idle - 6.2-2 button events by EXTI, no long operation
+   imu n=1999 max=2086  loop max=2295  ev_lat n=41 max=1729  jit=113

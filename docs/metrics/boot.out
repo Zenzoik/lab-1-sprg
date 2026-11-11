@@ -1,0 +1,5 @@
+{'run': 1, 'ok': True, 'selftest_begin_ms': 7, 'imu_ok': True, 'selftest_end_ms': 146, 'pass': 8, 'fail': 0, 'ready_ms': 489}
+{'run': 2, 'ok': True, 'selftest_begin_ms': 7, 'imu_ok': True, 'selftest_end_ms': 146, 'pass': 8, 'fail': 0, 'ready_ms': 489}
+{'run': 3, 'ok': True, 'selftest_begin_ms': 7, 'imu_ok': True, 'selftest_end_ms': 146, 'pass': 8, 'fail': 0, 'ready_ms': 489}
+{'run': 4, 'ok': True, 'selftest_begin_ms': 7, 'imu_ok': True, 'selftest_end_ms': 146, 'pass': 8, 'fail': 0, 'ready_ms': 489}
+{'run': 5, 'ok': True, 'selftest_begin_ms': 7, 'imu_ok': True, 'selftest_end_ms': 146, 'pass': 8, 'fail': 0, 'ready_ms': 489}

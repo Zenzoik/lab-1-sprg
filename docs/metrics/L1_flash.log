@@ -1,0 +1,26 @@
+>> help
+CMD help | selftest | whoami | jedec | probe <hex addr7> | reg <addr7> <reg> [n] | regw <addr7> <reg> <val> | pwm <1|2> <us> | adc | anomaly
+CMD lr3: scn <0..3> [sec] | set <imu|tlm|jrn|lop|stim|btn> <v> | stats | jit | mem | rx | evlog | press <ms> | jv | jtorn | ping | reboot
+TLM t_ms=187398 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+>> set tlm 0
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=0 stim=0 btn=irq
+>> set jrn 0
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=0 stim=0 btn=irq
+>> set lop 1000
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=1000 stim=0 btn=irq
+>> set stim 0
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=1000 stim=0 btn=irq
+>> scn 0 20
+SCN BEGIN n=0 sec=20 version=lr3 git=f96e864-dirty imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=1000 stim=0 btn=irq
+SCN END n=0 t_ms=213450
+STAT name=imu n=961 min_us=2044 avg_us=2077 max_us=2117
+STAT name=loop n=133494 min_us=100 avg_us=149 max_us=47155
+STAT name=ctl_lat n=961 min_us=2036 avg_us=2223 max_us=8636
+STAT name=longop n=20 min_us=46883 avg_us=46886 max_us=46891
+STAT name=cli n=1 min_us=12027 avg_us=12027 max_us=12027
+STAT name=load n=19 min_pct=14 avg_pct=14 max_pct=15
+JIT period_us=20000 min_us=-6473 max_us=46531 missed=38 hist=862,60,0,0,19,19
+MEM stack_used=1128 stack_size=2048 heap_used=0
+RX bytes=155 overruns=0 cmds=0
+EVLOG total=0 stored=0
+SCN DONE n=0

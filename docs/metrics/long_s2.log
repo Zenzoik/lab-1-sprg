@@ -1,0 +1,204 @@
+>> scn 2 3600
+SCN BEGIN n=2 sec=3600 version=lr3 git=f96e864-dirty imu_ms=20 tlm_ms=1000 jrn_ms=500 lop_ms=0 stim=1 btn=irq
+>> mem
+MEM stack_used=1128 stack_size=2048 heap_used=0
+>> jv
+>> rx
+JOURNAL status=OK good=601 bad=0 blank=0 erases=3 errors=0 next=0x004590
+>> mem
+MEM stack_used=1128 stack_size=2048 heap_used=0
+>> jv
+>> rx
+JOURNAL status=OK good=945 bad=0 blank=79 erases=5 errors=0 next=0x002B10
+>> mem
+MEM stack_used=1128 stack_size=2048 heap_used=0
+>> jv
+>> rx
+JOURNAL status=OK good=776 bad=0 blank=248 erases=8 errors=0 next=0x005080
+>> mem
+MEM stack_used=1128 stack_size=2048 heap_used=0
+>> jv
+>> rx
+JOURNAL status=OK good=863 bad=0 blank=161 erases=10 errors=0 next=0x0035F0
+>> mem
+MEM stack_used=1128 stack_size=2048 heap_used=0
+>> jv
+>> rx
+JOURNAL status=OK good=950 bad=0 blank=74 erases=12 errors=0 next=0x005B60
+>> mem
+MEM stack_used=1128 stack_size=2048 heap_used=0
+>> jv
+>> rx
+JOURNAL status=OK good=781 bad=0 blank=243 erases=15 errors=0 next=0x0040D0
+>> mem
+MEM stack_used=1128 stack_size=2048 heap_used=0
+>> jv
+>> rx
+JOURNAL status=OK good=868 bad=0 blank=156 erases=17 errors=0 next=0x002640
+>> mem
+MEM stack_used=1128 stack_size=2048 heap_used=0
+>> jv
+>> rx
+JOURNAL status=OK good=955 bad=0 blank=69 erases=19 errors=0 next=0x004BB0
+>> mem
+MEM stack_used=1128 stack_size=2048 heap_used=0
+>> jv
+>> rx
+JOURNAL status=OK good=786 bad=0 blank=238 erases=22 errors=0 next=0x003120
+>> mem
+MEM stack_used=1128 stack_size=2048 heap_used=0
+>> jv
+>> rx
+JOURNAL status=OK good=873 bad=0 blank=151 erases=24 errors=0 next=0x005690
+>> mem
+MEM stack_used=1128 stack_size=2048 heap_used=0
+>> jv
+>> rx
+JOURNAL status=OK good=960 bad=0 blank=64 erases=26 errors=0 next=0x003C00
+SCN END n=2 t_ms=3728239
+STAT name=imu n=179581 min_us=2054 avg_us=2087 max_us=2158
+STAT name=loop n=24486024 min_us=103 avg_us=147 max_us=769336
+STAT name=ctl_lat n=179581 min_us=2035 avg_us=2216 max_us=21877
+STAT name=telemetry n=3599 min_us=10723 avg_us=10843 max_us=10958
+STAT name=journal n=7189 min_us=1669 avg_us=1860 max_us=47247
+STAT name=cli n=23 min_us=9068 avg_us=342838 max_us=754114
+STAT name=ev_lat n=3835 min_us=62 avg_us=1122 max_us=708030
+STAT name=ev_irq n=3835 min_us=7 avg_us=8 max_us=8
+STAT name=load n=3599 min_pct=12 avg_pct=12 max_pct=79
+JIT period_us=20000 min_us=-17733 max_us=750859 missed=418 hist=144680,30020,0,1211,3629,40
+MEM stack_used=1128 stack_size=2048 heap_used=0
+RX bytes=236 overruns=0 cmds=22
+EVLOG total=3835 stored=128
+EVT n=1 t_us=1035021 lat_us=106
+EVT n=2 t_us=2239021 lat_us=187
+EVT n=3 t_us=3491021 lat_us=104
+EVT n=4 t_us=4418021 lat_us=78
+EVT n=5 t_us=5797021 lat_us=97
+EVT n=6 t_us=6679021 lat_us=91
+EVT n=7 t_us=7444021 lat_us=151
+EVT n=8 t_us=8748021 lat_us=168
+EVT n=9 t_us=9623021 lat_us=90
+EVT n=10 t_us=10663021 lat_us=168
+EVT n=11 t_us=11363021 lat_us=145
+EVT n=12 t_us=12308021 lat_us=167
+EVT n=13 t_us=13471021 lat_us=144
+EVT n=14 t_us=14440021 lat_us=2302
+EVT n=15 t_us=14944021 lat_us=112
+EVT n=16 t_us=15676021 lat_us=147
+EVT n=17 t_us=16390021 lat_us=112
+EVT n=18 t_us=16985020 lat_us=95
+EVT n=19 t_us=17782021 lat_us=360
+EVT n=20 t_us=19018021 lat_us=188
+EVT n=21 t_us=19841021 lat_us=1185
+EVT n=22 t_us=20300021 lat_us=2254
+EVT n=23 t_us=21458021 lat_us=160
+EVT n=24 t_us=22064021 lat_us=119
+EVT n=25 t_us=22583021 lat_us=126
+EVT n=26 t_us=23451021 lat_us=179
+EVT n=27 t_us=24722021 lat_us=239
+EVT n=28 t_us=25341021 lat_us=1235
+EVT n=29 t_us=25895021 lat_us=160
+EVT n=30 t_us=27095021 lat_us=73
+EVT n=31 t_us=28144021 lat_us=189
+EVT n=32 t_us=29344021 lat_us=149
+EVT n=33 t_us=30327021 lat_us=137
+EVT n=34 t_us=30940021 lat_us=2253
+EVT n=35 t_us=32123021 lat_us=107
+EVT n=36 t_us=33036021 lat_us=181
+EVT n=37 t_us=34007020 lat_us=4774
+EVT n=38 t_us=34611021 lat_us=122
+EVT n=39 t_us=35758021 lat_us=102
+EVT n=40 t_us=36217021 lat_us=163
+EVT n=41 t_us=36743021 lat_us=136
+EVT n=42 t_us=37822021 lat_us=271
+EVT n=43 t_us=38703021 lat_us=150
+EVT n=44 t_us=39861021 lat_us=1273
+EVT n=45 t_us=40563021 lat_us=108
+EVT n=46 t_us=42017021 lat_us=182
+EVT n=47 t_us=43184021 lat_us=165
+EVT n=48 t_us=44510021 lat_us=932
+EVT n=49 t_us=45923021 lat_us=74
+EVT n=50 t_us=46742021 lat_us=298
+EVT n=51 t_us=47663021 lat_us=100
+EVT n=52 t_us=48884021 lat_us=178
+EVT n=53 t_us=49615021 lat_us=116
+EVT n=54 t_us=50414021 lat_us=97
+EVT n=55 t_us=50896021 lat_us=80
+EVT n=56 t_us=51486021 lat_us=135
+EVT n=57 t_us=52269021 lat_us=161
+EVT n=58 t_us=53739021 lat_us=126
+EVT n=59 t_us=54662021 lat_us=281
+EVT n=60 t_us=55941021 lat_us=1229
+EVT n=61 t_us=56572021 lat_us=167
+EVT n=62 t_us=57480021 lat_us=101
+EVT n=63 t_us=58293021 lat_us=120
+EVT n=64 t_us=59639021 lat_us=75
+EVT n=65 t_us=60728021 lat_us=113
+EVT n=66 t_us=61162021 lat_us=348
+EVT n=67 t_us=62446021 lat_us=113
+EVT n=68 t_us=63159021 lat_us=172
+EVT n=69 t_us=64325021 lat_us=91
+EVT n=70 t_us=65206021 lat_us=122
+EVT n=71 t_us=65730021 lat_us=100
+EVT n=72 t_us=66541021 lat_us=1191
+EVT n=73 t_us=67256021 lat_us=165
+EVT n=74 t_us=68507021 lat_us=166
+EVT n=75 t_us=69482021 lat_us=352
+EVT n=76 t_us=70328021 lat_us=170
+EVT n=77 t_us=70992021 lat_us=158
+EVT n=78 t_us=71729021 lat_us=169
+EVT n=79 t_us=72214021 lat_us=89
+EVT n=80 t_us=72765021 lat_us=189
+EVT n=81 t_us=73723021 lat_us=119
+EVT n=82 t_us=75122021 lat_us=268
+EVT n=83 t_us=75617021 lat_us=102
+EVT n=84 t_us=77090021 lat_us=131
+EVT n=85 t_us=78049021 lat_us=182
+EVT n=86 t_us=79283021 lat_us=182
+EVT n=87 t_us=79901021 lat_us=1200
+EVT n=88 t_us=80608021 lat_us=172
+EVT n=89 t_us=81584021 lat_us=118
+EVT n=90 t_us=82513021 lat_us=81
+EVT n=91 t_us=83447021 lat_us=85
+EVT n=92 t_us=84081021 lat_us=1286
+EVT n=93 t_us=84894021 lat_us=134
+EVT n=94 t_us=85861021 lat_us=1243
+EVT n=95 t_us=86442021 lat_us=245
+EVT n=96 t_us=86850021 lat_us=89
+EVT n=97 t_us=88134021 lat_us=147
+EVT n=98 t_us=8853602>> mem
+1 lat_us=181
+EVT n=99 t_us=486535 lat_us=162
+EVT n=100 t_us=1772535 lat_us=109
+EVT n=101 t_us=3048535 lat_us=180
+EVT n=102 t_us=4062535 lat_us=1264
+EVT n=103 t_us=4898535 lat_us=132
+EVT n=104 t_us=5330535 lat_us=104
+EVT n=105 t_us=6005535 lat_us=150
+EVT n=106 t_us=6688535 lat_us=166
+EVT n=107 t_us=7904535 lat_us=133
+EVT n=108 t_us=8482535 lat_us=1207
+EVT n=109 t_us=9823535 lat_us=285
+EVT n=110 t_us=11306535 lat_us=171
+EVT n=111 t_us=12100535 lat_us=129
+EVT n=112 t_us=13070535 lat_us=145
+EVT n=113 t_us=13745535 lat_us=195
+EVT n=114 t_us=14204535 lat_us=191
+EVT n=115 t_us=15131535 lat_us=112
+EVT n=116 t_us=15882535 lat_us=1232
+EVT n=117 t_us=16725535 lat_us=103
+EVT n=118 t_us=17736535 lat_us=150
+EVT n=119 t_us=18155535 lat_us=80
+EVT n=120 t_us=18940535 lat_us=87
+EVT n=121 t_us=20320535 lat_us=142
+EVT n=122 t_us=21293535 lat_us=197
+EVT n=123 t_us=22397535 lat_us=128
+EVT n=124 t_us=23543535 lat_us=251
+EVT n=125 t_us=24978535 lat_us=79
+EVT n=126 t_us=25623535 lat_us=256
+EVT n=127 t_us=27084535 lat_us=69
+EVT n=128 t_us=28279535 lat_us=151
+SCN DONE n=2
+CMD error unknown command, try: help
+>> jv
+>> rx

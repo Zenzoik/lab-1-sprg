@@ -1,0 +1,2 @@
+== F1_sensor - 6.2-4 sensor lost and reconnected (slide switch in SDA)
+   imu n=1400 max=3690  loop max=11109  ev_lat n=None max=None  jit=11984888

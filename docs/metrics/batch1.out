@@ -1,0 +1,42 @@
+== L1_baseline - 6.2-1 control task alone
+   imu n=999 max=2085  loop max=2298  ev_lat n=None max=None  jit=118
+== L1_flash - 6.2-1 control task + sector erase/program every 1 s
+   imu n=961 max=2117  loop max=47155  ev_lat n=None max=None  jit=46531
+== E1_irq_idle - 6.2-2 button events by EXTI, no long operation
+   imu n=1999 max=2106  loop max=2292  ev_lat n=37 max=1668  jit=128
+== E2_irq_longop - 6.2-2 button events by EXTI during sector rewrites (every 500 ms)
+   imu n=1841 max=2180  loop max=47234  ev_lat n=43 max=35283  jit=46779
+== E3_poll_longop - 6.2-2 button events by polling during sector rewrites (every 500 ms)
+   imu n=1841 max=2154  loop max=47196  ev_lat n=81 max=45194  jit=46464
+== U1_flood_s2 - 6.2-3 flood of 'ping' commands during S2
+   imu n=999 max=2140  loop max=18747  ev_lat n=21 max=3417  jit=12024
+== U2_flood_s3 - 6.2-3 flood of 'ping' commands during S3
+   imu n=971 max=2165  loop max=53226  ev_lat n=139 max=45008  jit=51875
+== J1_journal - 6.2-8 journal written in S2, then CRC check, torn write, CRC check
+   imu n=749 max=2095  loop max=12738  ev_lat n=15 max=9726  jit=12413
+== B_imu_1 - 6.2-5 IMU period 20 ms under S3 load
+   imu n=480 max=2155  loop max=61908  ev_lat n=78 max=60913  jit=42069
+== B_imu_2 - 6.2-5 IMU period 10 ms under S3 load
+   imu n=914 max=2155  loop max=59748  ev_lat n=72 max=40787  jit=59401
+== B_imu_3 - 6.2-5 IMU period 5 ms under S3 load
+   imu n=1811 max=2144  loop max=59805  ev_lat n=74 max=57811  jit=59580
+== B_imu_4 - 6.2-5 IMU period 2 ms under S3 load
+   imu n=3943 max=2157  loop max=49381  ev_lat n=71 max=42979  jit=47494
+== B_imu_5 - 6.2-5 IMU period 1 ms under S3 load
+   imu n=3926 max=2154  loop max=49364  ev_lat n=70 max=16773  jit=48525
+== B_tlm_1 - 6.2-5 telemetry every 100 ms
+   imu n=499 max=2098  loop max=11019  ev_lat n=None max=None  jit=10402
+== B_tlm_2 - 6.2-5 telemetry every 50 ms
+   imu n=499 max=2098  loop max=13135  ev_lat n=None max=None  jit=10849
+== B_tlm_3 - 6.2-5 telemetry every 20 ms
+   imu n=499 max=2095  loop max=11022  ev_lat n=None max=None  jit=189
+== B_tlm_4 - 6.2-5 telemetry every 10 ms
+   imu n=499 max=2099  loop max=13153  ev_lat n=None max=None  jit=4118
+== B_lop_1 - 6.2-5 sector rewrite every 500 ms
+   imu n=461 max=2116  loop max=47149  ev_lat n=None max=None  jit=46403
+== B_lop_2 - 6.2-5 sector rewrite every 200 ms
+   imu n=401 max=2116  loop max=47158  ev_lat n=None max=None  jit=46284
+== B_lop_3 - 6.2-5 sector rewrite every 100 ms
+   imu n=301 max=2117  loop max=47158  ev_lat n=None max=None  jit=46735
+== B_lop_4 - 6.2-5 sector rewrite every 60 ms
+   imu n=167 max=2118  loop max=47160  ev_lat n=None max=None  jit=46608

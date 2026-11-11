@@ -1,0 +1,22 @@
+﻿D0 pulses: 1693
+width  us: {'n': 1693, 'min': 1881.2, 'avg': 2021.2, 'p50': 2020.5, 'p99': 2034.9, 'max': 2039.9}
+period us: {'n': 1692, 'min': 2264.4, 'avg': 20472.6, 'p50': 19990.3, 'p99': 78997.8, 'max': 79338.2}
+nominal period 19990 us; periods > 1.5x nominal: 112 (max 79338 us)
+D1 pulses: 209
+width  us: {'n': 209, 'min': 1683.6, 'avg': 6022.2, 'p50': 1690.3, 'p99': 46983.0, 'max': 47219.5}
+period us: {'n': 208, 'min': 1755.1, 'avg': 90923.1, 'p50': 99385.9, 'p99': 100793.6, 'max': 110596.6}
+nominal period 99386 us; periods > 1.5x nominal: 0 (max 110597 us)
+PB2 falling edges: 141, PA1 rising edges: 141
+analyzer latency us (PB2 fall -> PA1 rise): {'n': 141, 'min': 69.8, 'avg': 1830.8, 'p50': 162.2, 'p99': 37626.8, 'max': 48650.6}
+firmware EVT lines: 128; compared first 128 events
+firmware latency us: {'n': 128, 'min': 66, 'avg': 1871.8, 'p50': 159, 'p99': 37623, 'max': 48647}
+analyzer latency us: {'n': 128, 'min': 69.8, 'avg': 1875.9, 'p50': 163.5, 'p99': 37626.8, 'max': 48650.6}
+analyzer - firmware, us: {'n': 128, 'min': 3.4, 'avg': 4.1, 'p50': 4.0, 'p99': 4.5, 'max': 4.5} signed mean 4.1
+  event 1: firmware 158 us, analyzer 161.8 us
+  event 2: firmware 912 us, analyzer 915.9 us
+  event 3: firmware 204 us, analyzer 207.8 us
+  event 4: firmware 183 us, analyzer 187.0 us
+  event 5: firmware 199 us, analyzer 202.8 us
+  event 6: firmware 1793 us, analyzer 1797.5 us
+  event 7: firmware 175 us, analyzer 178.8 us
+  event 8: firmware 21681 us, analyzer 21684.4 us

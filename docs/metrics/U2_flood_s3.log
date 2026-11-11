@@ -1,0 +1,1154 @@
+>> help
+CMD help | selftest | whoami | jedec | probe <hex addr7> | reg <addr7> <reg> [n] | regw <addr7> <reg> <val> | pwm <1|2> <us> | adc | anomaly
+CMD lr3: scn <0..3> [sec] | set <imu|tlm|jrn|lop|stim|btn> <v> | stats | jit | mem | rx | evlog | press <ms> | jv | jtorn | ping | reboot
+TLM t_ms=382457 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+>> scn 3 20
+SCN BEGIN n=3 sec=20 version=lr3 git=f96e864-dirty imu_ms=20 tlm_ms=200 jrn_ms=100 lop_ms=1000 stim=2 btn=irq
+TLM t_ms=383588 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=383788 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+>> [flood of ping commands for 12 s]
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=383988 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=384191 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=384437 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+PONG n=53
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=384639 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=384839 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=385040 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=385240 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=385441 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=385641 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+PONG n=124
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=385841 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=386043 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=386243 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=386445 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=386645 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=386845 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=387045 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=387245 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=387446 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=387647 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=387847 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=388047 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=388247 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=388447 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=388647 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=388848 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=389051 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=389251 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+PONG n=403
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=389451 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=389651 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=389851 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=390051 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=390251 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=390453 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+PONG n=488
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+PONG n=498
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=390653 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=390853 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=1 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=391053 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=391254 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=1 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=391454 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=391654 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=1 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=391857 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=1 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=392057 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=392257 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=392457 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=1 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=392658 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=392858 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=393058 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=393260 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=393460 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=393660 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+PONG n=741
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=393861 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=394062 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=394262 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=394462 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=394664 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=394864 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+PONG n=844
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=395064 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=395264 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=395471 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=395671 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+TLM t_ms=395871 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+CMD error unknown command, try: help
+FLOOD sent=7960
+TLM t_ms=396071 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=396271 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=396471 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=396671 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=396871 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=1 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=397071 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=397271 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=397471 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=397671 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=397871 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=398071 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=398271 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=398471 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=398671 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=398871 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=399071 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=399271 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=399471 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=1 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=399671 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=399871 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=400071 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=400271 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=400471 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=400671 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=400871 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=401071 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=401271 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=401471 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=401671 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=401871 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=402071 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=402271 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=402471 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=402671 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=402871 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=403071 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+TLM t_ms=403271 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+SCN END n=3 t_ms=403388
+STAT name=imu n=971 min_us=2046 avg_us=2078 max_us=2165
+STAT name=loop n=90773 min_us=106 avg_us=220 max_us=53226
+STAT name=ctl_lat n=971 min_us=2023 avg_us=2989 max_us=21655
+STAT name=telemetry n=99 min_us=10584 avg_us=10712 max_us=10833
+STAT name=journal n=198 min_us=1614 avg_us=1897 max_us=47163
+STAT name=longop n=19 min_us=46818 avg_us=46902 max_us=46966
+STAT name=cli n=904 min_us=1320 avg_us=3773 max_us=12442
+STAT name=ev_lat n=139 min_us=71 avg_us=2517 max_us=45008
+STAT name=ev_irq n=139 min_us=7 avg_us=8 max_us=8
+STAT name=load n=19 min_pct=22 avg_pct=41 max_pct=55
+JIT period_us=20000 min_us=-17726 max_us=51875 missed=28 hist=528,54,63,247,58,20
+MEM stack_used=1128 stack_size=2048 heap_used=0
+RX bytes=15098 overruns=0 cmds=903
+EVLOG total=139 stored=128
+EVT n=1 t_us=140328 lat_us=1978
+EVT n=2 t_us=222328 lat_us=114
+EVT n=3 t_us=292328 lat_us=144
+EVT n=4 t_us=506327 lat_us=2191
+EVT n=5 t_us=692327 lat_us=1093
+EVT n=6 t_us=814328 lat_us=4739
+EVT n=7 t_us=931327 lat_us=166
+EVT n=8 t_us=997328 lat_us=1003
+EVT n=9 t_us=1161328 lat_us=2274
+EVT n=10 t_us=1228327 lat_us=1654
+EVT n=11 t_us=1331328 lat_us=3061
+EVT n=12 t_us=1545327 lat_us=184
+EVT n=13 t_us=1599327 lat_us=97
+EVT n=14 t_us=1701328 lat_us=901
+EVT n=15 t_us=1756328 lat_us=138
+EVT n=16 t_us=1871328 lat_us=91
+EVT n=17 t_us=2072328 lat_us=188
+EVT n=18 t_us=2139328 lat_us=164
+EVT n=19 t_us=2299327 lat_us=110
+EVT n=20 t_us=2416328 lat_us=187
+EVT n=21 t_us=2625328 lat_us=113
+EVT n=22 t_us=2668327 lat_us=3049
+EVT n=23 t_us=2874328 lat_us=194
+EVT n=24 t_us=3112328 lat_us=127
+EVT n=25 t_us=3288328 lat_us=81
+EVT n=26 t_us=3526328 lat_us=119
+EVT n=27 t_us=3666327 lat_us=1075
+EVT n=28 t_us=3756328 lat_us=189
+EVT n=29 t_us=3807328 lat_us=2359
+EVT n=30 t_us=4018328 lat_us=28181
+EVT n=31 t_us=4087328 lat_us=163
+EVT n=32 t_us=4302327 lat_us=1445
+EVT n=33 t_us=4385328 lat_us=111
+EVT n=34 t_us=4493328 lat_us=107
+EVT n=35 t_us=4662327 lat_us=6823
+EVT n=36 t_us=4792327 lat_us=209
+EVT n=37 t_us=4867327 lat_us=2579
+EVT n=38 t_us=5032328 lat_us=14247
+EVT n=39 t_us=5196328 lat_us=530
+EVT n=40 t_us=5383327 lat_us=2929
+EVT n=41 t_us=5495328 lat_us=208
+EVT n=42 t_us=5644327 lat_us=4517
+EVT n=43 t_us=5721327 lat_us=2296
+EVT n=44 t_us=5888327 lat_us=532
+EVT n=45 t_us=6005328 lat_us=45008
+EVT n=46 t_us=6197328 lat_us=167
+EVT n=47 t_us=6424328 lat_us=167
+EVT n=48 t_us=6521328 lat_us=857
+EVT n=49 t_us=6699328 lat_us=144
+EVT n=50 t_us=6759328 lat_us=3975
+EVT n=51 t_us=6805328 lat_us=1274
+EVT n=52 t_us=6897328 lat_us=106
+EVT n=53 t_us=6963328 lat_us=152
+EVT n=54 t_us=7157327 lat_us=175
+EVT n=55 t_us=7221327 lat_us=162
+EVT n=56 t_us=7338328 lat_us=2029
+EVT n=57 t_us=7454327 lat_us=3114
+EVT n=58 t_us=7693327 lat_us=1272
+EVT n=59 t_us=7853328 lat_us=154
+EVT n=60 t_us=8069327 lat_us=6897
+EVT n=61 t_us=8158327 lat_us=4055
+EVT n=62 t_us=8251328 lat_us=2497
+EVT n=63 t_us=8456327 lat_us=2299
+EVT n=64 t_us=8639328 lat_us=176
+EVT n=65 t_us=8869328 lat_us=10019
+EVT n=66 t_us=9064328 lat_us=4067
+EVT n=67 t_us=9145327 lat_us=1351
+EVT n=68 t_us=9282327 lat_us=4545
+EVT n=69 t_us=9386327 lat_us=2566
+EVT n=70 t_us=9579328 lat_us=94
+EVT n=71 t_us=9769328 lat_us=161
+EVT n=72 t_us=9986327 lat_us=133
+EVT n=73 t_us=10171328 lat_us=172
+EVT n=74 t_us=10325328 lat_us=141
+EVT n=75 t_us=10563328 lat_us=984
+EVT n=76 t_us=10737327 lat_us=2374
+EVT n=77 t_us=10812328 lat_us=148
+EVT n=78 t_us=10999327 lat_us=3520
+EVT n=79 t_us=11233328 lat_us=135
+EVT n=80 t_us=11291327 lat_us=115
+EVT n=81 t_us=11344328 lat_us=168
+EVT n=82 t_us=11535328 lat_us=159
+EVT n=83 t_us=11639328 lat_us=102
+EVT n=84 t_us=11782328 lat_us=37068
+EVT n=85 t_us=11904327 lat_us=1453
+EVT n=86 t_us=12060328 lat_us=2050
+EVT n=87 t_us=12153327 lat_us=535
+EVT n=88 t_us=12338327 lat_us=3116
+EVT n=89 t_us=12417328 lat_us=176
+EVT n=90 t_us=12636328 lat_us=135
+EVT n=91 t_us=12838328 lat_us=87
+EVT n=92 t_us=12976328 lat_us=106
+EVT n=93 t_us=13088327 lat_us=5006
+EVT n=94 t_us=13261328 lat_us=893
+EVT n=95 t_us=13392328 lat_us=109
+EVT n=96 t_us=13481328 lat_us=911
+EVT n=97 t_us=13589328 lat_us=154
+EVT n=98 t_us=13652328 lat_us=88
+EVT n=99 t_us=13861328 lat_us=896
+EVT n=100 t_us=14047328 lat_us=4101
+EVT n=101 t_us=14213328 lat_us=107
+EVT n=102 t_us=14351328 lat_us=91
+EVT n=103 t_us=14459328 lat_us=136
+EVT n=104 t_us=14685328 lat_us=7991
+EVT n=105 t_us=14843328 lat_us=144
+EVT n=106 t_us=14971328 lat_us=85
+EVT n=107 t_us=15160328 lat_us=1870
+EVT n=108 t_us=15337328 lat_us=157
+EVT n=109 t_us=15420328 lat_us=2003
+EVT n=110 t_us=15647328 lat_us=179
+EVT n=111 t_us=15812328 lat_us=81
+EVT n=112 t_us=16013328 lat_us=38155
+EVT n=113 t_us=16078328 lat_us=122
+EVT n=114 t_us=16240328 lat_us=1982
+EVT n=115 t_us=16358328 lat_us=103
+EVT n=116 t_us=16516328 lat_us=172
+EVT n=117 t_us=16688328 lat_us=5098
+EVT n=118 t_us=16788328 lat_us=77
+EVT n=119 t_us=17020328 lat_us=31252
+EVT n=120 t_us=17211328 lat_us=179
+EVT n=121 t_us=17420328 lat_us=1897
+EVT n=122 t_us=17578328 lat_us=137
+EVT n=123 t_us=17665328 lat_us=76
+EVT n=124 t_us=17804328 lat_us=167
+EVT n=125 t_us=17895328 lat_us=75
+EVT n=126 t_us=18103328 lat_us=183
+EVT n=127 t_us=18316328 lat_us=202
+EVT n=128 t_us=18496328 lat_us=140
+SCN DONE n=3

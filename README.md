@@ -1,7 +1,8 @@
-# sp-lab – Системне програмування, ЛР1–ЛР2
+# sp-lab – Системне програмування, ЛР1–ЛР3
 
 Motion-Mirroring Teleoperator на NUCLEO-C031C6 у симуляторі Wokwi (форма B): UART, I2C (MPU-6050), SPI (W25Q64), ADC, PWM, GPIO. Проєкт – див. [docs/PRD.md](docs/PRD.md).
 
+ЛР3: bare metal super loop, вимірювання продуктивності й пам'яті, реєстр обмежень.
 ЛР2: інтеграція сенсорної підсистеми – схема підключення, верифікація інтерфейсів логічним аналізатором, шарова архітектура, host-тести і CI.
 
 ## Структура
@@ -23,6 +24,12 @@ docs/architecture.md           шари, діаграма, модулі HAL, в�
 docs/captures/                 VCD-записи, декодування sigrok, analysis.md, measurements.txt
 docs/lab2-report.md            звіт ЛР2 (docs/LR2_report.docx / .pdf)
 docs/lab_2/img/                рисунки до звіту
+docs/lab3-report.md            звіт ЛР3: super loop, вимірювання, реєстр обмежень (docs/LR3_report.docx / .pdf)
+docs/tasks.md                  задачі продукту: період, дедлайн, FR
+docs/limitations.md            реєстр обмежень super loop
+docs/baseline-lab4.md           базова лінія для ЛР4
+docs/metrics/                   логи прогонів і results.json
+docs/captures/lr3_*.vcd         записи логічного аналізатора ЛР3
 Makefile                       обгортка над Docker
 .github/workflows/ci.yml       CI: build + test + check + coverage
 wokwi.toml, diagram.json       конфігурація і схема Wokwi

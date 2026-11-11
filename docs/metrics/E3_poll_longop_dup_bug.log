@@ -1,0 +1,112 @@
+>> help
+CMD help | selftest | whoami | jedec | probe <hex addr7> | reg <addr7> <reg> [n] | regw <addr7> <reg> <val> | pwm <1|2> <us> | adc | anomaly
+CMD lr3: scn <0..3> [sec] | set <imu|tlm|jrn|lop|stim|btn> <v> | stats | jit | mem | rx | evlog | press <ms> | jv | jtorn | ping | reboot
+TLM t_ms=311554 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+>> set tlm 0
+TLM t_ms=312554 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=0 stim=0 btn=irq
+>> set jrn 0
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=0 stim=0 btn=irq
+>> set lop 500
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=500 stim=0 btn=irq
+>> set stim 1
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=500 stim=1 btn=irq
+>> set btn poll
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=500 stim=1 btn=poll
+>> scn 0 40
+SCN BEGIN n=0 sec=40 version=lr3 git=f96e864-dirty imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=500 stim=1 btn=poll
+SCN END n=0 t_ms=358972
+STAT name=imu n=1841 min_us=2043 avg_us=2087 max_us=2154
+STAT name=loop n=248998 min_us=104 avg_us=160 max_us=47196
+STAT name=ctl_lat n=1841 min_us=2032 avg_us=2373 max_us=8570
+STAT name=longop n=80 min_us=46918 avg_us=46925 max_us=46968
+STAT name=cli n=1 min_us=11985 avg_us=11985 max_us=11985
+STAT name=ev_lat n=81 min_us=16 avg_us=1294 max_us=45194
+STAT name=ev_irq n=81 min_us=0 avg_us=4 max_us=8
+STAT name=load n=39 min_pct=19 avg_pct=19 max_pct=19
+JIT period_us=20000 min_us=-6492 max_us=46464 missed=158 hist=1672,10,0,0,79,79
+MEM stack_used=1128 stack_size=2048 heap_used=0
+RX bytes=361 overruns=0 cmds=0
+EVLOG total=81 stored=81
+EVT n=1 t_us=556074 lat_us=148
+EVT n=2 t_us=556205 lat_us=290
+EVT n=3 t_us=1933074 lat_us=144
+EVT n=4 t_us=1933202 lat_us=296
+EVT n=5 t_us=2945074 lat_us=118
+EVT n=6 t_us=2945176 lat_us=296
+EVT n=7 t_us=4100074 lat_us=2303
+EVT n=8 t_us=4102361 lat_us=303
+EVT n=9 t_us=4894074 lat_us=106
+EVT n=10 t_us=4894163 lat_us=296
+EVT n=11 t_us=6262074 lat_us=323
+EVT n=12 t_us=6262381 lat_us=300
+EVT n=13 t_us=7153074 lat_us=147
+EVT n=14 t_us=7153204 lat_us=294
+EVT n=15 t_us=7780074 lat_us=2279
+EVT n=16 t_us=7782336 lat_us=302
+EVT n=17 t_us=8865074 lat_us=161
+EVT n=18 t_us=8865219 lat_us=292
+EVT n=19 t_us=9757074 lat_us=143
+EVT n=20 t_us=9757200 lat_us=293
+EVT n=21 t_us=10448074 lat_us=126
+EVT n=22 t_us=10448184 lat_us=297
+EVT n=23 t_us=11854074 lat_us=144
+EVT n=24 t_us=11854201 lat_us=295
+EVT n=25 t_us=12831074 lat_us=172
+EVT n=26 t_us=12831230 lat_us=295
+EVT n=27 t_us=13645074 lat_us=185
+EVT n=28 t_us=13645243 lat_us=293
+EVT n=29 t_us=14113074 lat_us=134
+EVT n=30 t_us=14113192 lat_us=296
+EVT n=31 t_us=14690074 lat_us=204
+EVT n=32 t_us=14690262 lat_us=294
+EVT n=33 t_us=15450074 lat_us=104
+EVT n=34 t_us=15450161 lat_us=299
+EVT n=35 t_us=15886074 lat_us=168
+EVT n=36 t_us=15886225 lat_us=296
+EVT n=37 t_us=16528074 lat_us=18203
+EVT n=38 t_us=17895074 lat_us=91
+EVT n=39 t_us=17895149 lat_us=300
+EVT n=40 t_us=18483074 lat_us=162
+EVT n=41 t_us=18483220 lat_us=298
+EVT n=42 t_us=19354074 lat_us=207
+EVT n=43 t_us=19354264 lat_us=300
+EVT n=44 t_us=20384074 lat_us=155
+EVT n=45 t_us=20384213 lat_us=300
+EVT n=46 t_us=21501074 lat_us=45194
+EVT n=47 t_us=22473074 lat_us=119
+EVT n=48 t_us=22473176 lat_us=301
+EVT n=49 t_us=23705074 lat_us=73
+EVT n=50 t_us=23705426 lat_us=16
+EVT n=51 t_us=24776074 lat_us=113
+EVT n=52 t_us=24776171 lat_us=299
+EVT n=53 t_us=26026074 lat_us=20208
+EVT n=54 t_us=26836074 lat_us=159
+EVT n=55 t_us=26836216 lat_us=300
+EVT n=56 t_us=27339074 lat_us=150
+EVT n=57 t_us=27339208 lat_us=299
+EVT n=58 t_us=28694074 lat_us=156
+EVT n=59 t_us=28694213 lat_us=300
+EVT n=60 t_us=29666074 lat_us=106
+EVT n=61 t_us=29666163 lat_us=300
+EVT n=62 t_us=30787074 lat_us=186
+EVT n=63 t_us=30787244 lat_us=299
+EVT n=64 t_us=32091074 lat_us=129
+EVT n=65 t_us=32091187 lat_us=299
+EVT n=66 t_us=32899074 lat_us=106
+EVT n=67 t_us=32899164 lat_us=298
+EVT n=68 t_us=33903074 lat_us=94
+EVT n=69 t_us=33903152 lat_us=299
+EVT n=70 t_us=35333074 lat_us=88
+EVT n=71 t_us=35333146 lat_us=300
+EVT n=72 t_us=36278074 lat_us=115
+EVT n=73 t_us=36278173 lat_us=300
+EVT n=74 t_us=36778074 lat_us=197
+EVT n=75 t_us=36778254 lat_us=299
+EVT n=76 t_us=37833074 lat_us=134
+EVT n=77 t_us=37833191 lat_us=299
+EVT n=78 t_us=38567074 lat_us=140
+EVT n=79 t_us=38567197 lat_us=300
+EVT n=80 t_us=39796074 lat_us=105
+EVT n=81 t_us=39796162 lat_us=302
+SCN DONE n=0

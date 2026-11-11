@@ -1,0 +1,30 @@
+>> help
+CMD help | selftest | whoami | jedec | probe <hex addr7> | reg <addr7> <reg> [n] | regw <addr7> <reg> <val> | pwm <1|2> <us> | adc | anomaly
+CMD lr3: scn <0..3> [sec] | set <imu|tlm|jrn|lop|stim|btn> <v> | stats | jit | mem | rx | evlog | press <ms> | jv | jtorn | ping | reboot
+TLM t_ms=598985 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+>> set imu 20
+TLM t_ms=599985 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD set imu_ms=20 tlm_ms=1000 jrn_ms=0 lop_ms=0 stim=0 btn=irq
+>> set tlm 0
+TLM t_ms=601071 pitch_cdeg=0 roll_cdeg=0 adc=0 gain_pct=50 btn=0 mode=live p1_us=1500 p2_us=1500
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=0 stim=0 btn=irq
+>> set jrn 0
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=0 stim=0 btn=irq
+>> set stim 0
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=0 stim=0 btn=irq
+>> set lop 500
+CMD set imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=500 stim=0 btn=irq
+>> scn 0 10
+SCN BEGIN n=0 sec=10 version=lr3 git=f96e864-dirty imu_ms=20 tlm_ms=0 jrn_ms=0 lop_ms=500 stim=0 btn=irq
+SCN END n=0 t_ms=616291
+STAT name=imu n=461 min_us=2042 avg_us=2081 max_us=2116
+STAT name=loop n=63513 min_us=100 avg_us=157 max_us=47149
+STAT name=ctl_lat n=461 min_us=2037 avg_us=2358 max_us=8521
+STAT name=longop n=20 min_us=46887 avg_us=46889 max_us=46892
+STAT name=cli n=1 min_us=11922 avg_us=11922 max_us=11922
+STAT name=load n=9 min_pct=19 avg_pct=19 max_pct=19
+JIT period_us=20000 min_us=-6351 max_us=46403 missed=38 hist=388,34,0,0,19,19
+MEM stack_used=1128 stack_size=2048 heap_used=0
+RX bytes=15883 overruns=0 cmds=0
+EVLOG total=0 stored=0
+SCN DONE n=0
