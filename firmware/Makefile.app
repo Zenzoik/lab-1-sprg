@@ -8,12 +8,21 @@
 
 include Makefile
 
+# LR3: size-optimised build (flash was 96 % full at -Og), per-function stack usage, memory report.
+OPT = -Os
+GIT_HASH ?= dev
+CFLAGS += -flto -fstack-usage -DGIT_HASH=\"$(GIT_HASH)\"
+LDFLAGS += -flto -Os -Wl,--print-memory-usage
+
 # --- our layers -------------------------------------------------------------
 APP_SOURCES := \
 Platform/platform.c \
 Devices/mpu6050.c \
 Devices/w25q64.c \
 App/motion.c \
+App/perf.c \
+App/crc16.c \
+App/journal.c \
 App/app.c
 
 C_SOURCES += $(APP_SOURCES)
@@ -39,3 +48,7 @@ $(APP_OBJECTS): CFLAGS += -Wextra -Wshadow -Wpedantic -Werror
 # The included Makefile expanded the elf prerequisites before our sources were appended,
 # so declare the dependency of the link step on our objects explicitly.
 $(BUILD_DIR)/$(TARGET).elf: $(APP_OBJECTS)
+
+
+# newlib calls _sbrk/_write by name: LTO would drop them as unreferenced.
+$(BUILD_DIR)/sysmem.o $(BUILD_DIR)/syscalls.o: CFLAGS += -fno-lto

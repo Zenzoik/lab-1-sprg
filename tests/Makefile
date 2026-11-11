@@ -9,8 +9,8 @@ CC ?= gcc
 FW := ../firmware
 
 # Units under test (everything that does not include HAL).
-SUT := $(FW)/Devices/mpu6050.c $(FW)/Devices/w25q64.c $(FW)/App/motion.c $(FW)/App/app.c
-TESTS := test_main.c test_motion.c test_mpu6050.c test_w25q64.c test_app.c fakes.c
+SUT := $(FW)/Devices/mpu6050.c $(FW)/Devices/w25q64.c $(FW)/App/motion.c $(FW)/App/perf.c $(FW)/App/crc16.c $(FW)/App/journal.c $(FW)/App/app.c
+TESTS := test_main.c test_motion.c test_mpu6050.c test_w25q64.c test_app.c test_lr3.c fakes.c
 
 INCLUDES := -I. -I$(FW)/App -I$(FW)/Devices
 WARN := -Wall -Wextra -Wshadow -Wpedantic -Werror

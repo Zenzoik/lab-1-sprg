@@ -1,6 +1,7 @@
 IMAGE ?= stm32-build
+GIT_HASH ?= $(shell git describe --always --dirty 2>/dev/null || echo dev)
 DOCKER_RUN = docker run --rm -v $(CURDIR):/workspace -w /workspace \
-	--user $(shell id -u):$(shell id -g) $(IMAGE)
+	-e GIT_HASH=$(GIT_HASH) --user $(shell id -u):$(shell id -g) $(IMAGE)
 
 .PHONY: image build clean flash monitor test coverage check check-deps check-pinout \
 	check-deps-selftest chips decode measure figures all-checks

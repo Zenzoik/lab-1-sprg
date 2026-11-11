@@ -2,6 +2,7 @@
 version = 1
 firmware = 'firmware/build/firmware.elf'
 elf = 'firmware/build/firmware.elf'
+rfc2217ServerPort = 4000
 
 # Custom SPI-flash model (chips/w25q64, built with `make chips`)
 [[chip]]
