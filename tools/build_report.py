@@ -187,7 +187,7 @@ for line in ["Міністерство освіти і науки України
     para(line, WD_ALIGN_PARAGRAPH.CENTER, after=0)
 for _ in range(5):
     para("", after=0)
-para("Лабораторна робота № 2", WD_ALIGN_PARAGRAPH.CENTER, bold=True, after=0)
+para("Лабораторна робота № " + os.environ.get("LAB_NO", "2"), WD_ALIGN_PARAGRAPH.CENTER, bold=True, after=0)
 para("з дисципліни", WD_ALIGN_PARAGRAPH.CENTER, after=0)
 para("«Системне програмування»", WD_ALIGN_PARAGRAPH.CENTER, after=0)
 for _ in range(5):
