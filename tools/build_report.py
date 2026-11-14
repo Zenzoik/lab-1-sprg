@@ -74,7 +74,7 @@ def add_hyperlink(p, url, text, size=None):
     p._p.append(h)
 
 
-TOKEN = re.compile(r"(\*\*[^*]+\*\*|`[^`]+`|\[[^\]]+\]\([^)]+\))")
+TOKEN = re.compile(r"(\*\*(?:[^*]|\*(?!\*))+\*\*|`[^`]+`|\[[^\]]+\]\([^)]+\))")
 
 
 def inline(p, text, size=None):
@@ -132,8 +132,22 @@ def table(rows):
     tot = float(sum(widths))
     fs = 9.5 if ncol >= 6 else 10.5
     colw = [Cm(max(1.8, usable * w_ / tot)) for w_ in widths]
-    scale = usable / sum(c.cm for c in colw)
-    colw = [Cm(c.cm * scale) for c in colw]
+    # keep every column wide enough for its longest word (no "виконан/о" wraps)
+    cm = [c.cm for c in colw]
+    minw = []
+    for ci in range(ncol):
+        words = [w_ for r_ in [header] + body for w_ in (r_[ci].replace("`", "").split() if ci < len(r_) else [])]
+        lw = min(max([len(w_) for w_ in words] + [3]), 16)
+        minw.append(lw * fs * 0.0225 + 0.55)
+    for _ in range(6):
+        need = sum(max(c_, m_) for c_, m_ in zip(cm, minw))
+        fixed = [c_ < m_ for c_, m_ in zip(cm, minw)]
+        free = sum(c_ for c_, f_ in zip(cm, fixed) if not f_)
+        extra = need - usable
+        cm = [m_ if f_ else (c_ - extra * c_ / free if extra > 0 and free > 0 else c_)
+              for c_, m_, f_ in zip(cm, minw, fixed)]
+    scale = usable / sum(cm)
+    colw = [Cm(c_ * scale) for c_ in cm]
     for ci, col in enumerate(t.columns):
         col.width = colw[ci]
     for ri, r_ in enumerate([header] + body):
@@ -144,7 +158,7 @@ def table(rows):
             cp = cell.paragraphs[0]
             cp.alignment = WD_ALIGN_PARAGRAPH.LEFT
             if ri == 0:
-                run(cp, txt, bold=True, size=fs)
+                run(cp, txt.replace("`", ""), bold=True, size=fs)
                 shade(cell, "D9E2F3")
             else:
                 inline(cp, txt, fs)
@@ -236,11 +250,11 @@ while i < len(lines):
         i += 1
         continue
     if ln.startswith("## "):
-        para(ln[3:], WD_ALIGN_PARAGRAPH.CENTER, bold=True, after=8, keep=True)
+        para(ln[3:].replace("`", ""), WD_ALIGN_PARAGRAPH.CENTER, bold=True, after=8, keep=True)
         i += 1
         continue
     if ln.startswith("### "):
-        para(ln[4:], WD_ALIGN_PARAGRAPH.LEFT, bold=True, after=6, keep=True)
+        para(ln[4:].replace("`", ""), WD_ALIGN_PARAGRAPH.LEFT, bold=True, after=6, keep=True)
         i += 1
         continue
     if re.match(r"^\d+\. ", ln):
